@@ -17,7 +17,7 @@ const API: React.FC = () => {
   const [select, setSelect] = useState("");
   return (
     <Fragment>
-      <div className="bg-black-dull md:py-20 py-10">
+      <div className="bg-black-dull min-h-[100vh] md:py-20 py-10">
         <Container className="flex justify-center">
           <div className="p-10 bg-black-400 w-full max-w-[800px] flex flex-col items-center rounded-lg">
             <h1 className="text-4xl textGradient font-semibold mb-12">

@@ -43,7 +43,7 @@ const ProfileDropdown = ({ home }: Iprops) => {
       icon: <RiLockPasswordLine />,
       href: "/profile/change-password",
     },
-    { name: "Logout", icon: <MdOutlineLogout /> },
+    { name: "Logout", icon: <MdOutlineLogout />, href: "/auth/login" },
   ];
 
   const handleLogout = () => {

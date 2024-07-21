@@ -76,7 +76,7 @@ const Login = () => {
 
   return (
     <>
-      <div className="md:py-20 bg-black-dull border-b py-10 pb-5 pt-8 flex justify-between items-center relative flex-col">
+      <div className="md:py-20 bg-black-dull min-h-[100vh] border-b py-10 pb-5 pt-8 flex justify-between items-center relative flex-col">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="w-full sm:w-[500px] p-10 shadow-arround relative rounded-lg"

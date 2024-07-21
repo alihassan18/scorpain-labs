@@ -5,7 +5,7 @@ import React, { Fragment } from "react";
 const ChangePassword: React.FC = () => {
   return (
     <Fragment>
-      <div className="md:py-20 py-10 bg-black-dull border-b min-h-[90vh]">
+      <div className="md:py-20 py-10 bg-black-dull border-b min-h-[100vh]">
         <Container className="flex justify-center">
           <div className="p-10 bg-black-400 w-full max-w-[600px] flex flex-col items-center rounded-lg">
             <h1 className="text-4xl textGradient font-semibold mb-12">
