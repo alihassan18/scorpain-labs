@@ -77,6 +77,12 @@ export default function Navbar() {
       window != undefined && window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const data = [
+    { label: "One test", href: "/" },
+    { label: "two", href: "/" },
+  ];
+
   return (
     <ReduxProvider>
       <nav
@@ -252,7 +258,7 @@ export default function Navbar() {
                 ))}
               </ul>
               <div className="flex gap-4 items-center">
-                {
+                {/* {
                   token ? (
                     <span
                       onClick={handleLogout}
@@ -266,11 +272,13 @@ export default function Navbar() {
                   //     Sign Up
                   //   </span>
                   // </Link>
-                }
+                } */}
                 {token ? (
-                  <Link href="/app/galleryview">
-                    <Button className="">Dashboard</Button>
-                  </Link>
+                  <>
+                    <Link href="/app/galleryview">
+                      <Button className="">Dashboard</Button>
+                    </Link>
+                  </>
                 ) : (
                   <Link
                     href="/auth/login"

@@ -1,6 +1,7 @@
 "use client";
 import { Fragment } from "react";
 import { Listbox, Transition } from "@headlessui/react";
+import { IoIosArrowDown } from "react-icons/io";
 interface Iprops {
   selected: any;
   setSelected: any;
@@ -27,17 +28,17 @@ export default function SelectComponent({
       onChange={setSelected}
     >
       <Listbox.Button
-        className={`relative ${className} placeholder:text-base   !rounded-full text-white flex w-full items-center justify-between  border border-[#666666] bg-[#121212] h-14 py-3.5 pl-5 pr-16 text-left focus:outline-none  focus:border-primary`}
+        className={`relative ${className} placeholder:text-base text-white flex w-full items-center justify-between border border-[#D0D0D026]/30 bg-[#121212] h-14 py-3.5 pl-5 pr-16 text-left focus:outline-none  focus:border-primary`}
       >
         <span
-          className={`block truncate font-medium text-[#666666]  text-base font-montserrat`}
+          className={`block truncate font-medium text-[#666666] text-base font-montserrat`}
           title={selected?.name || placeholder}
         >
           {selected?.name || placeholder}
         </span>
         <span className="absolute flex items-center pointer-events-none inset-y-1/2 right-5">
-          {/* <IoIosArrowDown className="text-base" /> */}
-          <i className={`${SelectIcon} icon-angle text-sm -rotate-90`}></i>
+          <IoIosArrowDown className="text-base" />
+          {/* <i className={`${SelectIcon} icon-angle text-sm -rotate-90`}></i> */}
         </span>
       </Listbox.Button>
 
@@ -57,13 +58,13 @@ export default function SelectComponent({
                 <Listbox.Option
                   key={Idx}
                   className={({ active }: any) =>
-                    `relative cursor-pointer select-none py-2 px-6 ${
+                    `relative cursor-pointer select-none py-2 px-6 text-white ${
                       active ? "bg-[#0B0407]/50" : ""
                     }`
                   }
                   value={item}
                 >
-                  <div className="truncate text-[#666666]">{item.name}</div>
+                  <div className="truncate text-white">{item.name}</div>
                 </Listbox.Option>
               </>
             );

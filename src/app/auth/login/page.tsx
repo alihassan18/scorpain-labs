@@ -54,8 +54,6 @@ const Login = () => {
         dispatch(updateUser(response.data.record));
       }
 
-      console.log(response, "login res");
-
       switch (true) {
         case response.data?.access_token &&
           response.data?.record &&
@@ -69,7 +67,7 @@ const Login = () => {
           ) {
             Cookies.default.set("access_token", response?.data?.access_token);
             console.log("i got here.");
-            router.push("/app/galleryview");
+            router.push("/");
           } else {
             router.push("/auth/pendingVerification");
           }
