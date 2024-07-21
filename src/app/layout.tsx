@@ -35,12 +35,12 @@ const Futura = localFont({
       path: "../../public/assets/fonts/FuturaNormal.woff2",
       weight: "400",
       style: "normal",
-    }/* ,
+    } /* ,
     {
       path: "../../public/assets/fonts/Segoe UI Symbol.ttf",
       weight: "500",
       style: "normal",
-    }, */
+    }, */,
   ],
   variable: "--font-futura",
 });
@@ -61,19 +61,19 @@ export default function RootLayout({
       <body className={`${Futura.variable} `}>
         <AppProvider>
           <ReactQueryProvider>
-            {pathname.includes("app") || pathname.includes("auth") ? (
+            {/* {pathname.includes("app") || pathname.includes("auth") ? (
               ""
             ) : (
               <Header />
-            )}
-
+            )} */}
+            <Header />
             <main>{children}</main>
-            {pathname.includes("app") || pathname.includes("auth") ? (
+            <Footer />
+            {/* {pathname.includes("app") || pathname.includes("auth") ? (
               ""
             ) : (
               <Footer />
-            )}
-
+            )} */}
             <ToastContainer position="top-center" autoClose={2000} />
           </ReactQueryProvider>
         </AppProvider>

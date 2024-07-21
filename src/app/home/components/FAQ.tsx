@@ -4,18 +4,10 @@ import { Container } from "@/components/common/index";
 
 export default function FAQ() {
   return (
-    <div className="relative" id="faqs">
-      <img
-        src="/assets/images/home/faqbg.png"
-        className="h-full w-full absolute    top-0 -z-30"
-        alt=""
-      />
-      <Container>
-        <div className=" flex flex-col items-center lg:pt-28 py-12 sm:py-24  ">
-          <h1 className="h2 text-center">Frequently Asked Questions</h1>
-          <p className=" font-normal text-[#9A9A9A] mt-4">
-            Your queries, answered succinctly.
-          </p>
+    <div className="bg-black-mid">
+      <Container className="md:py-28 py-10">
+        <h1 className="text-4xl textGradient text-center font-semibold">FAQ</h1>
+        <div className="flex flex-col items-center mt-16">
           <FaqComponent />
         </div>
       </Container>

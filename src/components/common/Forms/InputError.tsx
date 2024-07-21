@@ -5,7 +5,7 @@ interface InputErrorProps {
 const InputError: React.FC<InputErrorProps> = ({ error }) => {
   return (
     <>
-      <p className="mt-1 text-red-500">
+      <p className="mt-1 text-base text-red-500">
         {error instanceof Object ? error.message : error}
       </p>
     </>

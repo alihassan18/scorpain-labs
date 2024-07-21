@@ -2,28 +2,22 @@
 import { Button, Container, ImageComponent } from "@/components/common";
 import { Dialog, Transition } from "@headlessui/react";
 import Link from "next/link";
-import { Fragment, useContext, useEffect, useState } from "react";
-import { toast } from "react-toastify";
+import { Fragment, useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import ProfileDropdown from "../ProfileDropdown";
 import { ReduxProvider } from "@/redux/Provider/ReduxProvider";
+import { MdOutlineHome, MdCloudQueue } from "react-icons/md";
+
 const Navigation = [
   {
-    name: "About",
-    href: "#about",
+    name: "Home",
+    icon: <MdOutlineHome />,
+    href: "/",
   },
   {
-    name: "Features",
-    href: "#friendmap",
-  },
-
-  {
-    name: "Reviews",
-    href: "#reviews",
-  },
-  {
-    name: "FAQ’s",
-    href: "#faqs",
+    name: "Features & Pricing",
+    icon: <MdCloudQueue />,
+    href: "/",
   },
 ];
 
@@ -86,10 +80,12 @@ export default function Navbar() {
   return (
     <ReduxProvider>
       <nav
-        className={` ${scrollBackground ? "fixed bg-[#04172B]/80" : "fixed"}
-     ${isScrolledDown ? "-top-28" : "top-0 "}
-      z-50 w-full duration-300 ease-linear
-     `}
+        className="bg-black-mid z-[99999]"
+        //for scrolling navbar
+        //     className={` ${scrollBackground ? "fixed bg-[#04172B]/80" : "fixed"}
+        //  ${isScrolledDown ? "-top-28" : "top-0 "}
+        //   z-50 w-full duration-300 ease-linear
+        //  `}
         id="feature"
       >
         <Container className="" size="lg">
@@ -131,7 +127,7 @@ export default function Navbar() {
                       leaveFrom="opacity-100"
                       leaveTo="opacity-0"
                     >
-                      <div className="absolute top-0 pt-5  z-20 -right-8 px-5">
+                      <div className="absolute top-0 pt-5 z-20 -right-8 px-5">
                         <button
                           type="button"
                           className="-m-2 p-2 flex justify-center items-center h-10 w-10 bg-white rounded-full"
@@ -143,12 +139,13 @@ export default function Navbar() {
                       </div>
                     </Transition.Child>
                     <div
-                      className={`overflow-hidden duration-300 ease-linear gap-10 flex flex-col justify-between w-[90vw] bg-[#4345A3] p-8`}
+                      className={`z-[999999] h-screen fixed duration-300 ease-linear gap-10 flex flex-col justify-between w-[80vw] bg-black-mid p-8`}
                     >
                       <ul className="space-y-12">
                         {Navigation?.map((item, i) => (
                           <Link href={item.href} key={i}>
-                            <li className="text-white md:mb-0 mb-12 text-lg font-normal relative border-b border-[#C0C0FF]">
+                            <li className="text-white md:mb-0 mb-12 text-lg font-normal relative pb-2 flex gap-3 items-center border-b">
+                              <span>{item.icon}</span>
                               {item.name}
                               {/* {!item.name && (
                       <div className="p-[3px] rounded-full bg-primary lg:block hidden"></div>
@@ -158,27 +155,31 @@ export default function Navbar() {
                         ))}
                       </ul>
                       <div className="flex gap-4 items-center">
-                        {token ? (
-                          <span
-                            onClick={handleLogout}
-                            className="text-white font-semibold text-[17px] cursor-pointer"
-                          >
-                            Log Out
-                          </span>
-                        ) : (
-                          <Link href="/auth/sign-up ">
-                            <span className="text-white font-semibold text-[17px] cursor-pointer">
-                              Sign Up
+                        {
+                          token ? (
+                            <span
+                              onClick={handleLogout}
+                              className="text-white font-semibold text-[17px] cursor-pointer"
+                            >
+                              Log Out
                             </span>
-                          </Link>
-                        )}
+                          ) : null
+                          // <Link href="/auth/sign-up ">
+                          //   <span className="text-white font-semibold text-[17px] cursor-pointer">
+                          //     Sign Up
+                          //   </span>
+                          // </Link>
+                        }
                         {token ? (
                           <Link href="/app/galleryview">
                             <Button className="">Dashboard</Button>
                           </Link>
                         ) : (
-                          <Link href="/auth/login">
-                            <Button className="!px-7 !py-2.5">Login</Button>
+                          <Link
+                            href="/auth/login"
+                            className="text-white md:mb-0 mb-4 text-lg font-normal relative flex items-center gap-2"
+                          >
+                            Login
                           </Link>
                         )}
                       </div>
@@ -189,7 +190,7 @@ export default function Navbar() {
             </Dialog>
           </Transition.Root>
           <div className="justify-between mx-auto md:flex md:items-center">
-            <div className="flex items-center justify-center md:justify-between py-3 md:block md:py-6 relative">
+            <div className="flex items-center justify-center md:justify-between py-3 md:block relative">
               <button
                 className="rounded-md p-1.5 text-gray-700 outline-none focus:border focus:border-gray-400 md:hidden absolute left-0"
                 onClick={() => setNavbar(!navbar)}
@@ -224,37 +225,14 @@ export default function Navbar() {
                     <ProfileDropdown home />
                   </span>
                 ) : (
-                  <Link href="/auth/login">
-                    <Button className="!px-5 !py-1">
-                      <span className="block mb-1 ">Login</span>
-                    </Button>
+                  <Link
+                    href="/auth/login"
+                    className="text-white md:mb-0 mb-4 text-lg font-normal relative flex items-center gap-2"
+                  >
+                    Login
                   </Link>
                 )}
               </div>
-              {/* <div className="flex items-center gap-3 md:hidden">
-              <button
-                className="rounded-md p-1.5 text-gray-700 outline-none focus:border focus:border-gray-400"
-                onClick={() => setNavbar(!navbar)}
-              >
-                {navbar ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 text-black"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293
-                      4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                ) : (
-                  ""
-                )}
-              </button>
-            </div> */}
             </div>
             <div
               className={`overflow-hidden duration-300 ease-linear gap-10 md:flex hidden ${
@@ -266,37 +244,39 @@ export default function Navbar() {
               <ul className="items-center justify-center md:gap-0 md:flex md:space-x-5 lg:space-x-10">
                 {Navigation?.map((item, i) => (
                   <Link href={item.href} key={i}>
-                    <li className="text-white md:mb-0 mb-4 text-lg font-normal relative">
+                    <li className="text-white hover:text-primary md:mb-0 mb-4 text-lg font-normal relative flex items-center gap-2">
+                      <span className="">{item.icon}</span>
                       {item.name}
-                      {/* {!item.name && (
-                      <div className="p-[3px] rounded-full bg-primary lg:block hidden"></div>
-                    )} */}
                     </li>
                   </Link>
                 ))}
               </ul>
               <div className="flex gap-4 items-center">
-                {token ? (
-                  <span
-                    onClick={handleLogout}
-                    className="text-white font-semibold text-[17px] cursor-pointer"
-                  >
-                    Log Out
-                  </span>
-                ) : (
-                  <Link href="/auth/sign-up ">
-                    <span className="text-white font-semibold text-[17px] cursor-pointer">
-                      Sign Up
+                {
+                  token ? (
+                    <span
+                      onClick={handleLogout}
+                      className="text-white hover:text-primary font-semibold text-[17px] cursor-pointer"
+                    >
+                      Log Out
                     </span>
-                  </Link>
-                )}
+                  ) : null
+                  // <Link href="/auth/sign-up ">
+                  //   <span className="text-white font-semibold text-[17px] cursor-pointer">
+                  //     Sign Up
+                  //   </span>
+                  // </Link>
+                }
                 {token ? (
                   <Link href="/app/galleryview">
                     <Button className="">Dashboard</Button>
                   </Link>
                 ) : (
-                  <Link href="/auth/login">
-                    <Button className="!px-7 !py-2.5">Login</Button>
+                  <Link
+                    href="/auth/login"
+                    className="text-white hover:text-primary md:mb-0 mb-4 text-lg font-normal relative flex items-center gap-2"
+                  >
+                    Login
                   </Link>
                 )}
               </div>

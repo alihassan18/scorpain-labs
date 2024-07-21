@@ -8,7 +8,14 @@ const config: Config = {
         display: ["var(--font-futura)", ...fontFamily.sans],
       },
       colors: {
-        primary: "#FF4581",
+        black: {
+          DEFAULT: "#000000",
+          mid: "#27292E",
+          dull: "#1D2024",
+          200: "#2C2F36",
+          400: "#46484E"
+        },
+        primary: "#FFB82F",
         secondary: "#333333",
         darkBlack: "#001D41",
         lightGray: "#8F9091",
@@ -24,6 +31,9 @@ const config: Config = {
       },
       borderRadius: {
         larg: "20px",
+      },
+      boxShadow: {
+        arround: 'rgba(255, 255, 255, 0.02) 0px 5px 15px'
       },
       lineHeight: {
         0: "0",

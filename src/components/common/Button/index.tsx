@@ -33,9 +33,7 @@ const Button = ({
 
   const variantStyles: VsProps = {
     solid: {
-      primary: `${
-        disabled ? "bg-[#CCCCCC]" : "AtBtn"
-      }  text-white active:text-white/80`,
+      primary: `bg-[#CCCCCC] text-white active:text-white/80`,
       danger: "bg-[#FF0000] text-white",
     },
     outline: {
