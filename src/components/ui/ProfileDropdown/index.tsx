@@ -1,27 +1,17 @@
 import clsx from "clsx";
-import React, {
-  Fragment,
-  useState,
-  useRef,
-  useEffect,
-  useCallback,
-} from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import { useGetMeQuery } from "@/redux/slice/api";
-// @ts-ignore
 import OutSideClick from "react-outside-click-handler";
 import { getObjectFromLocalStorage } from "@/utils/storage";
 import { IUser } from "@/interfaces/user.interface";
-
-
-import { Menu, MenuItem, MenuItems } from '@headlessui/react'
-
+// @ts-ignore
+import { Menu, MenuItem, MenuItems } from "@headlessui/react";
 
 interface Iprops {
   home?: boolean;
 }
-
 
 const ProfileDropdown = ({ home }: Iprops) => {
   const user: IUser | null = getObjectFromLocalStorage("user");
@@ -73,7 +63,7 @@ const ProfileDropdown = ({ home }: Iprops) => {
             } rounded-full border inline-flex items-center gap-2 rounded-md bg-gray-800 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-700 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white`}
             // @ts-ignore
             onClick={() => {
-              setIsOpen(!isOpen)
+              setIsOpen(!isOpen);
             }} // Toggle dropdown state
           >
             <div className={`${home && "hidden"} text-base min-w-20`}>
@@ -92,31 +82,28 @@ const ProfileDropdown = ({ home }: Iprops) => {
             anchor="bottom end"
             className="w-52 origin-top-right rounded-xl border border-white/5 bg-white/5 p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
           >
-           
-              {userNavigation.map((item, i) => (
-                <MenuItem key={item.name}>
-                    <a
-                      href={item.href}
-                      onClick={() =>
-                        item.name === "Logout"
-                          ? handleLogout()
-                          : null
-                      }
-                      className={clsx(
-                        true ? "bg-black" : "",
-                        i == 0 || i == 1 ? "text-gray" : "text-[#00000] mt-1",
-                        "px-6 py-1 text-sm leading-6  font-medium gap-3 flex items-center cursor-pointer"
-                      )}
-                    >
-                      <i
-                        className={`${item.icon} ${
-                          i == 0 ? "text-primary" : "text-[#00000]"
-                        }`}
-                      ></i>
-                      {item.name}
-                    </a>
-                </MenuItem>
-              ))}
+            {userNavigation.map((item, i) => (
+              <MenuItem key={item.name}>
+                <a
+                  href={item.href}
+                  onClick={() =>
+                    item.name === "Logout" ? handleLogout() : null
+                  }
+                  className={clsx(
+                    true ? "bg-black" : "",
+                    i == 0 || i == 1 ? "text-gray" : "text-[#00000] mt-1",
+                    "px-6 py-1 text-sm leading-6  font-medium gap-3 flex items-center cursor-pointer"
+                  )}
+                >
+                  <i
+                    className={`${item.icon} ${
+                      i == 0 ? "text-primary" : "text-[#00000]"
+                    }`}
+                  ></i>
+                  {item.name}
+                </a>
+              </MenuItem>
+            ))}
           </MenuItems>
         </Menu>
       </OutSideClick>
