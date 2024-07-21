@@ -1,19 +1,24 @@
 "use client";
-import { Container } from "@/components/common";
+import { Button, Container } from "@/components/common";
 import Input from "@/components/common/Forms/Input";
 import SelectComponent from "@/components/common/Forms/SelectComponents";
 import React, { Fragment, useState } from "react";
 
-const dataExchange = [{ name: "name" }];
-const data = [{ name: "name" }, { name: "name 2" }];
+const dataExchange = [{ name: "BITMART" }];
+const data = [
+  { name: "Volume Support" },
+  { name: "Liquidity Support" },
+  { name: "Cash-out(VIP Services)" },
+  { name: "Manual Operation" },
+];
 
 const API: React.FC = () => {
   const [selectExchange, setSelectExchange] = useState("");
   const [select, setSelect] = useState("");
   return (
     <Fragment>
-      <div className="bg-black-dull border-b">
-        <Container className="py-20 flex justify-center">
+      <div className="bg-black-dull md:py-20 py-10">
+        <Container className="flex justify-center">
           <div className="p-10 bg-black-400 w-full max-w-[800px] flex flex-col items-center rounded-lg">
             <h1 className="text-4xl textGradient font-semibold mb-12">
               Bind API
@@ -24,7 +29,7 @@ const API: React.FC = () => {
                 <div className="col-span-3">
                   <SelectComponent
                     className="bg-black-mid text-white w-full !rounded-md"
-                    placeholder={"Select"}
+                    placeholder={"Please choose"}
                     selected={selectExchange}
                     setSelected={setSelectExchange}
                     Data={dataExchange}
@@ -36,7 +41,7 @@ const API: React.FC = () => {
                 <div className="col-span-3">
                   <Input
                     className="bg-black-mid text-white w-full"
-                    placeholder={"Select"}
+                    placeholder={""}
                     name=""
                   />
                 </div>
@@ -46,7 +51,7 @@ const API: React.FC = () => {
                 <div className="col-span-3">
                   <Input
                     className="bg-black-mid text-white w-full"
-                    placeholder={"Select"}
+                    placeholder={""}
                     name=""
                   />
                 </div>
@@ -56,12 +61,15 @@ const API: React.FC = () => {
                 <div className="col-span-3">
                   <SelectComponent
                     className="bg-black-mid text-white w-full !rounded-md"
-                    placeholder={"Select"}
+                    placeholder={"Please choose"}
                     selected={select}
                     setSelected={setSelect}
                     Data={data}
                   />
                 </div>
+              </div>
+              <div className="pt-8 flex justify-center">
+                <Button className="w-1/2 rounded-md bg-primary">Submit</Button>
               </div>
             </section>
           </div>

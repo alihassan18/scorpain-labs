@@ -1,4 +1,4 @@
-import { Dialog, Transition } from "@headlessui/react";
+import { Dialog, DialogBackdrop, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 interface Iprops {
   className?: string;
@@ -19,7 +19,7 @@ export default function BasicModal({
       <Dialog as="div" className="fixed z-50 inset-0 " onClose={hide}>
         <div className="flex  items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
           <Transition.Child>
-            <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-80 0transition-opacity" />
+            <DialogBackdrop className="fixed inset-0 bg-black bg-opacity-80 0transition-opacity" />
           </Transition.Child>
           <span
             className="hidden sm:inline-block sm:align-middle sm:h-screen "

@@ -8,6 +8,10 @@ import { getObjectFromLocalStorage } from "@/utils/storage";
 import { IUser } from "@/interfaces/user.interface";
 // @ts-ignore
 import { Menu, MenuItem, MenuItems } from "@headlessui/react";
+import { MdOutlineLogout } from "react-icons/md";
+import { FaStreetView } from "react-icons/fa";
+import { AiOutlineApi } from "react-icons/ai";
+import { RiLockPasswordLine } from "react-icons/ri";
 
 interface Iprops {
   home?: boolean;
@@ -27,12 +31,19 @@ const ProfileDropdown = ({ home }: Iprops) => {
 
   const userNavigation = [
     {
-      name: `${home ? "Dashboard" : "Profile"}`,
-      icon: "icon-account",
-      href: `${home ? "/app/galleryview" : "/app/profile"}`,
+      name: `${home ? "Dashboard" : "Account Overview"}`,
+      icon: <FaStreetView />,
+      href: `${
+        home ? "/profile/account-overview" : "/profile/account-overview"
+      }`,
     },
-    { name: "Privacy Settings", icon: "icon-log-out" },
-    { name: "Logout", icon: "icon-log-out" },
+    { name: "Bind API", icon: <AiOutlineApi />, href: "/profile/api" },
+    {
+      name: "Change Password",
+      icon: <RiLockPasswordLine />,
+      href: "/profile/change-password",
+    },
+    { name: "Logout", icon: <MdOutlineLogout /> },
   ];
 
   const handleLogout = () => {
@@ -60,7 +71,7 @@ const ProfileDropdown = ({ home }: Iprops) => {
           <Menu.Button
             className={`${
               home ? "" : "p-1 pr-2  gap-1.5 flex items-center"
-            } rounded-full border inline-flex items-center gap-2 rounded-md bg-gray-800 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-700 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white`}
+            } inline-flex items-center gap-2 rounded-md py-1.5 px-3 text-sm/6 font-semibold text-white `}
             // @ts-ignore
             onClick={() => {
               setIsOpen(!isOpen);
@@ -80,7 +91,7 @@ const ProfileDropdown = ({ home }: Iprops) => {
           <MenuItems
             transition
             anchor="bottom end"
-            className="w-52 origin-top-right rounded-xl border border-white/5 bg-white/5 p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
+            className="w-52 bg-black-mid origin-top-right p-1 !rounded-md text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
           >
             {userNavigation.map((item, i) => (
               <MenuItem key={item.name}>
@@ -90,7 +101,7 @@ const ProfileDropdown = ({ home }: Iprops) => {
                     item.name === "Logout" ? handleLogout() : null
                   }
                   className={clsx(
-                    true ? "bg-black" : "",
+                    true ? "" : "",
                     i == 0 || i == 1 ? "text-gray" : "text-[#00000] mt-1",
                     "px-6 py-1 text-sm leading-6  font-medium gap-3 flex items-center cursor-pointer"
                   )}

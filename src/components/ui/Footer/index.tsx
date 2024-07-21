@@ -2,13 +2,13 @@ import { Container } from "@/components/common";
 import Link from "next/link";
 
 const Navigation = [
-  // {
-  //   name: "Terms",
-  //   href: "",
-  // },
   {
-    name: "Privacy Policy | Terms & Conditions",
-    // href: "javascript:void(0)",
+    name: "Privacy Policy",
+    href: "/privacy-policy",
+  },
+  {
+    name: "Terms & Conditions",
+    href: "terms",
   },
 ];
 const Footer = () => {
@@ -17,19 +17,22 @@ const Footer = () => {
       <Container className="py-5">
         <div className="flex items-center flex-wrap md:flex-nowrap md:justify-between justify-center gap-4 ">
           <span className="text-white sm:text-base text-xs">
-            © 2024 Scorpion Lab. All rights reserved.
+            © {new Date().getFullYear()} Scorpion Lab. All rights reserved.
           </span>
-          <div className="items-center justify-center flex space-x-3">
+          {/* <div className="items-center justify-center flex space-x-3">
             {Navigation?.map((item, i) => (
-              // <Link key={i}>
+              <>
+               {i > 0 && <span className="text-white"> | </span>}
+              <Link href={item.href} key={i}>
               <div key={i}>
                 <span className="text-white font-normal sm:text-base text-xs">
                   {item.name}
                 </span>
               </div>
-              // </Link>
+              </Link>
+              </>
             ))}
-          </div>
+          </div> */}
         </div>
       </Container>
     </div>
