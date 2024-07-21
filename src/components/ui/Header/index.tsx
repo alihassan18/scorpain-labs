@@ -194,7 +194,7 @@ export default function Navbar() {
               </button>
               <Link href="/" className="">
                 <ImageComponent
-                  src="/assets/images/home1/Logo.svg"
+                  src="/assets/images/logo-new.png"
                   fill
                   figClassName="w-[200px] xs:w-[135px] xs:h-[35px] h-[50px]"
                   className="object-contain rounded-full"

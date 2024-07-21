@@ -48,46 +48,17 @@ const Login = () => {
     };
     try {
       const response = await authApi.loginEndpoint(data);
+      if (response.status != 200) {
+        toast.error(response.data.message);
+        return;
+      }
       localStorage.setItem("user", JSON.stringify(response?.data?.record));
-      console.log(response, "response from login endpoint");
-      if (response?.data) {
-        dispatch(updateUser(response.data.record));
-      }
+      dispatch(updateUser(response.data.record));
+      appStore.setUser(response.data.record);
+      appStore.setAccessToken(response.data.access_token);
+      Cookies.default.set("access_token", response?.data?.access_token);
+      router.push("/app");
 
-      console.log(response, "login res");
-
-      switch (true) {
-        case response.data?.access_token &&
-          response.data?.record &&
-          response.data?.record?.isVerifiedOtp === true:
-          // toast.success('User login successfully');
-          appStore.setUser(response.data.record);
-          appStore.setAccessToken(response.data.access_token);
-          if (
-            response.data.record.active === true &&
-            response?.data?.record?.Questionnaire?.length !== 0
-          ) {
-            Cookies.default.set("access_token", response?.data?.access_token);
-            console.log("i got here.");
-            router.push("/app/galleryview");
-          } else {
-            router.push("/auth/pendingVerification");
-          }
-
-          if (response?.data?.record?.Questionnaire?.length === 0) {
-            router.push("/auth/question");
-          }
-          break;
-        case response.data?.record?.isVerifiedOtp === false:
-          toast.success("Verification OTP sent to your email!");
-          setTimeout(() => {
-            router.push("/auth/signupEmailVerify");
-          }, 2000);
-          break;
-        default:
-          toast.error(response.data.message);
-          return;
-      }
     } catch (error: any) {
       toast.error(error);
       console.log("Error In Login", error);
@@ -106,15 +77,15 @@ const Login = () => {
 
   return (
     <>
-      <div className="md:py-20 bg-black-dull border-b py-10 pb-5 pt-8 flex justify-between items-center relative flex-col">
+      <div className="md:py-20 bg-black-dull border-b py-10 pb-5 pt-8 flex justify-between items-center relative flex-col" style={{height:'100%'}}>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="w-full sm:w-[500px] p-10 relative rounded-lg  shadow-arround"
+          className="w-full sm:w-[500px] p-10 relative rounded-lg"
         >
           <img
-            src="/assets/images/logo.png"
+            src="/assets/images/plain-logo.png"
             alt=""
-            className="mx-auto w-[50%] xs:hidden block 2xl:w-[60%]"
+            className="mx-auto w-[30%] xs:hidden block 2xl:w-[30%]"
           />
           <div
             className="xs:shadow-xl xs:bg-white xs:rounded-[20px] md:mt-16 mt-8 xs:p-6"
@@ -155,27 +126,18 @@ const Login = () => {
               </Link>
             </div> */}
             <div className="pt-4">
-              {isLoading ? (
+              <div className=" xs:flex xs:justify-center items-center ">
                 <Button
-                  disabled
-                  className="mt-2 2xl:mt-4 rounded-md w-full bg-primary flex gap-2 2xl:!py-4 !text-xl 2xl:!text-[22px] xs:!text-sm"
+                  disabled={isLoading}
+                  className="mt-2 2xl:mt-4 rounded-md w-full bg-primary flex gap-2 2xl:!py-4 xs:!text-sm !text-xl 2xl:!text-[22px] xs:w-[215px]"
                   type="submit"
                 >
-                  Loading...
+                  {isLoading ? 'Loading...' : 'Login Now'} 
+                  <span>
+                    <Arrow className="xs:h-3 xs:w-3" />
+                  </span>
                 </Button>
-              ) : (
-                <div className=" xs:flex xs:justify-center items-center ">
-                  <Button
-                    className="mt-2 2xl:mt-4 rounded-md w-full bg-primary flex gap-2 2xl:!py-4 xs:!text-sm !text-xl 2xl:!text-[22px] xs:w-[215px]"
-                    type="submit"
-                  >
-                    Login Now
-                    <span>
-                      <Arrow className="xs:h-3 xs:w-3" />
-                    </span>
-                  </Button>
-                </div>
-              )}
+              </div>
             </div>
           </div>
         </form>
