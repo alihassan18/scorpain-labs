@@ -81,11 +81,6 @@ export default function Navbar() {
     <ReduxProvider>
       <nav
         className="bg-black-mid z-[99999]"
-        //for scrolling navbar
-        //     className={` ${scrollBackground ? "fixed bg-[#04172B]/80" : "fixed"}
-        //  ${isScrolledDown ? "-top-28" : "top-0 "}
-        //   z-50 w-full duration-300 ease-linear
-        //  `}
         id="feature"
       >
         <Container className="" size="lg">
@@ -147,9 +142,6 @@ export default function Navbar() {
                             <li className="text-white md:mb-0 mb-12 text-lg font-normal relative pb-2 flex gap-3 items-center border-b">
                               <span>{item.icon}</span>
                               {item.name}
-                              {/* {!item.name && (
-                      <div className="p-[3px] rounded-full bg-primary lg:block hidden"></div>
-                    )} */}
                             </li>
                           </Link>
                         ))}
@@ -161,27 +153,17 @@ export default function Navbar() {
                               onClick={handleLogout}
                               className="text-white font-semibold text-[17px] cursor-pointer"
                             >
-                              Log Out
+                              Logout
                             </span>
-                          ) : null
-                          // <Link href="/auth/sign-up ">
-                          //   <span className="text-white font-semibold text-[17px] cursor-pointer">
-                          //     Sign Up
-                          //   </span>
-                          // </Link>
+                          ) : <>
+                            <Link
+                              href="/auth/login"
+                              className="text-white md:mb-0 mb-4 text-lg font-normal relative flex items-center gap-2"
+                            >
+                              Login
+                            </Link>
+                          </>
                         }
-                        {token ? (
-                          <Link href="/app/galleryview">
-                            <Button className="">Dashboard</Button>
-                          </Link>
-                        ) : (
-                          <Link
-                            href="/auth/login"
-                            className="text-white md:mb-0 mb-4 text-lg font-normal relative flex items-center gap-2"
-                          >
-                            Login
-                          </Link>
-                        )}
                       </div>
                     </div>
                   </Dialog.Panel>
@@ -254,31 +236,18 @@ export default function Navbar() {
               <div className="flex gap-4 items-center">
                 {
                   token ? (
-                    <span
-                      onClick={handleLogout}
-                      className="text-white hover:text-primary font-semibold text-[17px] cursor-pointer"
-                    >
-                      Log Out
+                    <span className="block mt-2">
+                      <ProfileDropdown />
                     </span>
-                  ) : null
-                  // <Link href="/auth/sign-up ">
-                  //   <span className="text-white font-semibold text-[17px] cursor-pointer">
-                  //     Sign Up
-                  //   </span>
-                  // </Link>
+                  ) : <>
+                    <Link
+                      href="/auth/login"
+                      className="text-white hover:text-primary md:mb-0 mb-4 text-lg font-normal relative flex items-center gap-2"
+                    >
+                      Login
+                    </Link>
+                  </>
                 }
-                {token ? (
-                  <Link href="/app/galleryview">
-                    <Button className="">Dashboard</Button>
-                  </Link>
-                ) : (
-                  <Link
-                    href="/auth/login"
-                    className="text-white hover:text-primary md:mb-0 mb-4 text-lg font-normal relative flex items-center gap-2"
-                  >
-                    Login
-                  </Link>
-                )}
               </div>
             </div>
           </div>
