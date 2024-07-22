@@ -41,23 +41,27 @@ const Login = () => {
 
   const onSubmit: SubmitHandler<FormData> = async () => {
     setIsLoading(true);
-
     let data = {
       email: getValues("email"),
       password: getValues("password"),
     };
     try {
       const response = await authApi.loginEndpoint(data);
-      if (response.status != 200) {
+      // if (response.status != 200) {
+      //   toast.error(response.data.message);
+      //   return;
+      // }
+      if (response?.data?.success) {
+        localStorage.setItem("user", JSON.stringify(response?.data?.record));
+        dispatch(updateUser(response.data.record));
+        appStore.setUser(response.data.record);
+        appStore.setAccessToken(response.data.access_token);
+        Cookies.default.set("access_token", response?.data?.access_token);
+        router.push("/app");
+      } else {
         toast.error(response.data.message);
         return;
       }
-      localStorage.setItem("user", JSON.stringify(response?.data?.record));
-      dispatch(updateUser(response.data.record));
-      appStore.setUser(response.data.record);
-      appStore.setAccessToken(response.data.access_token);
-      Cookies.default.set("access_token", response?.data?.access_token);
-      router.push("/app");
     } catch (error: any) {
       toast.error(error);
       console.log("Error In Login", error);

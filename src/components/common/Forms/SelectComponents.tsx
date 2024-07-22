@@ -31,7 +31,7 @@ export default function SelectComponent({
         className={`relative ${className} placeholder:text-base text-white flex w-full items-center justify-between border border-[#D0D0D026]/30 bg-[#121212] h-14 py-3.5 pl-5 pr-16 text-left focus:outline-none  focus:border-primary`}
       >
         <span
-          className={`block truncate font-medium text-[#666666] text-base font-montserrat`}
+          className={`block truncate font-medium text-base font-montserrat`}
           title={selected?.name || placeholder}
         >
           {selected?.name || placeholder}
@@ -50,7 +50,7 @@ export default function SelectComponent({
       >
         <Listbox.Options
           className={`${ListBoxOptions} absolute !z-50 mt-1 max-h-[14.5rem] w-full overflow-auto AtScrollHide
-               rounded-lg border border-[#666666] py-2  font-medium bg-[#121212] text-sm focus:outline-none`}
+               rounded-lg border border-[#666666] py-2 font-medium bg-[#121212] text-sm focus:outline-none`}
         >
           {Data.map((item: any, Idx: any) => {
             return (
