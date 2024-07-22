@@ -33,7 +33,7 @@ export default function Navbar() {
     if (userToken) {
       setToken(userToken);
     }
-  }, []);
+  }, [userToken]);
 
   const handleLogout = () => {
     Cookies.remove("access_token");
