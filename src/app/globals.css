@@ -658,3 +658,12 @@ input[type="number"] {
   -webkit-text-fill-color: transparent;
   ;
 }
+
+.master-table {
+  border-collapse: collapse; /* Ensure cells do not have space between them */
+    width: 100%;
+}
+
+.master-table td {
+  padding-bottom: 10px;
+}
