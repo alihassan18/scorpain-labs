@@ -28,7 +28,7 @@ const VipServices = () => {
       <Container className="md:py-28 py-10">
         <div className="text-center">
           <h1 className="text-4xl textGradient font-semibold">
-            VIP Services - $100 USD / Service / Pair / Month
+            VIP Services - $1000 USD / Service / Pair / Month
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
             {data.length > 0 &&

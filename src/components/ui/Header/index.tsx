@@ -33,7 +33,7 @@ export default function Navbar() {
     if (userToken) {
       setToken(userToken);
     }
-  }, []);
+  }, [userToken]);
 
   const handleLogout = () => {
     Cookies.remove("access_token");
@@ -78,17 +78,9 @@ export default function Navbar() {
     };
   }, []);
 
-  const data = [
-    { label: "One test", href: "/" },
-    { label: "two", href: "/" },
-  ];
-
   return (
     <ReduxProvider>
-      <nav
-        className="bg-black-mid z-[99999]"
-        id="feature"
-      >
+      <nav className="bg-black-mid z-[99999]" id="feature">
         <Container className="" size="lg">
           <Transition.Root show={navbar} as={Fragment}>
             <Dialog
@@ -153,15 +145,15 @@ export default function Navbar() {
                         ))}
                       </ul>
                       <div className="flex gap-4 items-center">
-                        {
-                          token ? (
-                            <span
-                              onClick={handleLogout}
-                              className="text-white font-semibold text-[17px] cursor-pointer"
-                            >
-                              Logout
-                            </span>
-                          ) : <>
+                        {token ? (
+                          <span
+                            onClick={handleLogout}
+                            className="text-white font-semibold text-[17px] cursor-pointer"
+                          >
+                            Logout
+                          </span>
+                        ) : (
+                          <>
                             <Link
                               href="/auth/login"
                               className="text-white md:mb-0 mb-4 text-lg font-normal relative flex items-center gap-2"
@@ -169,7 +161,7 @@ export default function Navbar() {
                               Login
                             </Link>
                           </>
-                        }
+                        )}
                       </div>
                     </div>
                   </Dialog.Panel>
@@ -240,12 +232,12 @@ export default function Navbar() {
                 ))}
               </ul>
               <div className="flex gap-4 items-center">
-                 {
-                  token ? (
-                    <span className="block mt-2">
-                      <ProfileDropdown />
-                    </span>
-                  ) : <>
+                {token ? (
+                  <span className="block mt-2">
+                    <ProfileDropdown />
+                  </span>
+                ) : (
+                  <>
                     <Link
                       href="/auth/login"
                       className="text-white hover:text-primary md:mb-0 mb-4 text-lg font-normal relative flex items-center gap-2"
@@ -253,7 +245,7 @@ export default function Navbar() {
                       Login
                     </Link>
                   </>
-                }
+                )}
               </div>
             </div>
           </div>

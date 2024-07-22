@@ -1,171 +1,213 @@
-import React, { Fragment } from "react";
-import { Container } from "@/components/common";
-import { TfiReload } from "react-icons/tfi";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import { Button } from "@headlessui/react";
+"use client";
+import React, { Fragment, useEffect, useState } from "react";
+import { Button, Container } from "@/components/common";
+import { IUser } from "@/interfaces/user.interface";
+import { getObjectFromLocalStorage } from "@/utils/storage";
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from "@headlessui/react";
+import { FaChevronCircleDown } from "react-icons/fa";
 
-const data = [
+const activeExchangeData: any = [
   {
-    title: "Volume Support",
-    rfcAmout: "133,334",
-    usdtAmount: "1,961",
-    bmxAmount: "0",
+    name: "Volume Support",
+    rfc: "133334",
+    usdt: "1962.71",
+    bmx: "0",
   },
   {
-    title: "Liquidity Support",
-    rfcAmout: "293,587",
-    usdtAmount: "5,815.33",
-    bmxAmount: "0.001508",
+    name: "Liquidity Support",
+    rfc: "293,587",
+    usdt: "5815.33",
+    bmx: "0.001508",
   },
   {
-    title: "Cash-out",
-    rfcAmout: "87,577",
-    usdtAmount: "2,341.34",
-    bmxAmount: "0",
+    name: "Cash-out",
+    rfc: "87577",
+    usdt: "2341.34",
+    bmx: "0",
   },
   {
-    title: "Manual Operation",
-    rfcAmout: "324,253",
-    usdtAmount: "8,706.49",
-    bmxAmount: "0",
+    name: "Control Operation",
+    rfc: "324253",
+    usdt: "8706.49",
+    bmx: "0",
+  },
+  {
+    name: "Uniswap Support",
+    rfc: "200000",
+    usdt: "6700.49",
+    bmx: "0",
   },
 ];
 
-const data2 = [
+const bitmartExpDateCost: any = [
   {
-    title: "Basic Services, expires on:",
-    date: "2024/08/03 , 12 days remaining",
-    amount: "500",
+    name: "Basic Services, expires on:",
+    remain: "2024/08/03 , 12 days remaining",
+    usdt: "2500",
+    term: "montly",
   },
   {
-    title: "Reference Price, expires on:",
-    date: "2024/07/03 , Expired",
-    amount: "100",
+    name: "Reference Price, expires on:",
+    remain: "2024/07/03 , Expired",
+    usdt: "1000",
+    term: "montly",
   },
   {
-    title: "Cash-out, expires on:",
-    date: "2024/08/03 , 12 days remaining",
-    amount: "100",
+    name: "Cash-out, expires on:",
+    remain: "2024/08/03 , 12 days remaining",
+    usdt: "1000",
+    term: "montly",
   },
   {
-    title: "Price Support, expires on:",
-    date: "2024/08/03 , 12 days remaining",
-    amount: "100",
+    name: "Price Support, expires on:",
+    remain: "2024/08/03 , 12 days remaining",
+    usdt: "1000",
+    term: "montly",
   },
 ];
 
 const AccountOverview: React.FC = () => {
+  const userLocal: IUser | null = getObjectFromLocalStorage("user");
+  const [user, setUser] = useState<IUser | null>(null);
+  useEffect(() => {
+    userLocal && setUser(userLocal);
+  }, [userLocal]);
+
   return (
     <Fragment>
-      <div className="md:py-20 min-h-[100vh] py-10 bg-black-dull border-b flex justify-center w-full">
-        <Container className="flex flex-col itemc-center space-y-5 w-full">
-          <div className="p-10 bg-black-400 w-full max-w-[1200px] flex flex-col rounded-lg">
-            <h1 className="text-4xl textGradient font-semibold">
+      <div className="md:py-20 min-h-[100vh] py-10 bg-black-dull border-b">
+        <Container className="flex justify-center flex-col gap-10">
+          <div className="p-10 bg-black-400 w-full flex flex-col rounded-lg">
+            <h1 className="text-3xl textGradient font-semibold mb-3">
               Account Overview
             </h1>
-            <p className="text-white/50 text-base pt-3">
-              Account Name: <span className="text-white">royalfinancecoin</span>
-            </p>
-            <h3 className="text-white/50 font-semibold text-2xl pt-4">
-              List of Active Exchnage
-            </h3>
+            <h3 className="text-xl text-white mb-10">Account Name: rfc</h3>
+            <h2 className="text-2xl text-white font-semibold mb-3">
+              List of Active Exchanges
+            </h2>
             <section className="w-full space-y-5">
-              <div className="mt-8">
-                <div className="bg-black flex items-center justify-between p-5 rounded-t-xl">
-                  <div className="flex items-center gap-5">
-                    <h6 className="text-white font-medium text-lg">BITMART</h6>
-                    <h6 className="text-white/50 font-medium text-lg">
-                      RFC/USDT
-                    </h6>
-                  </div>
-                  <div className="flex items-center gap-4 text-white">
-                    <TfiReload className="text-xl cursor-pointer" />
-                    <MdOutlineKeyboardArrowDown className="text-3xl cursor-pointer" />
-                  </div>
-                </div>
-                <div className="bg-black-200 rounded-b-xl p-5">
-                  {data.length > 0 &&
-                    data.map((item, index) => {
-                      const isLastItem = index === data.length - 1;
-                      const isFirstChild = index === 0;
-                      return (
-                        <div
-                          className={`${isLastItem && "border-b-0 pb-0"} ${
-                            isFirstChild && "pt-0"
-                          } border-b flex lg:flex-row flex-col justify-between gap-5 py-3 items-center border-b-black-400`}
-                          key={index}
-                        >
-                          <div className="flex gap-5 w-full items-center justify-between lg:max-w-[700px] w-max-w">
-                            <p className="text-white/50 text-base w-full max-w-[180px]">
-                              {item.title}
-                            </p>
-                            <div className="flex lg:flex-row lg:w-full w-auto flex-col justify-self-end lg:justify-self-auto">
-                              <p className="text-white/50 text-base w-full max-w-[180px]">
-                                {item.rfcAmout}{" "}
-                                <span className="text-white">RFC</span>
-                              </p>
-                              <p className="text-white/50 text-base w-full max-w-[180px]">
-                                {item.usdtAmount}{" "}
-                                <span className="text-white">USDT</span>
-                              </p>
-                              <p className="text-white/50 text-base w-full max-w-[180px]">
-                                {item.bmxAmount}{" "}
-                                <span className="text-white">BMX</span>
-                              </p>
-                            </div>
-                          </div>
-                          <Button className="bg-[#4E393E] text-[#D4413E] hover:bg-[#D4413E] hover:text-white rounded-md py-2 px-8 w-full lg:w-max">
-                            Unbind
-                          </Button>
-                        </div>
-                      );
-                    })}
-                </div>
-              </div>
+              <Disclosure
+                as="div"
+                className=""
+                style={{ borderRadius: 10 }}
+                defaultOpen={true}
+              >
+                <DisclosureButton
+                  className="group flex w-full items-center justify-between p-5"
+                  style={{
+                    backgroundColor: "#1e2024",
+                    borderTopRightRadius: 10,
+                    borderTopLeftRadius: 10,
+                  }}
+                >
+                  <span className="text-sm/6 font-medium text-white group-data-[hover]:text-white/80 flex gap-10 items-center">
+                    <span className="text-xl me-10">BITMART</span>
+                    <span className="text-sm">RFC/USDT</span>
+                  </span>
+                  <FaChevronCircleDown className="text-xl text-white group-data-[open]:rotate-180" />
+                </DisclosureButton>
+                <DisclosurePanel
+                  className="p-5 text-sm/5 text-white/50"
+                  style={{
+                    backgroundColor: "#303339",
+                    borderBottomRightRadius: 10,
+                    borderBottomLeftRadius: 10,
+                  }}
+                >
+                  <table className="w-full master-table text-lg">
+                    {activeExchangeData &&
+                      activeExchangeData.map((item: any) => (
+                        <tr className="text-normal">
+                          <td>{item.name}</td>
+                          <td>
+                            {item.rfc} <span className="text-white">RFC</span>
+                          </td>
+                          <td>
+                            {item.usdt} <span className="text-white">USDT</span>
+                          </td>
+                          <td>
+                            {item.mbx} <span className="text-white">BMX</span>
+                          </td>
+                          <td width={100}>
+                            <Button
+                              variant={"outline"}
+                              color={"danger"}
+                              style={{
+                                color: "#ee5757",
+                                borderColor: "transparent",
+                                backgroundColor: "#4F393D",
+                                borderRadius: 10,
+                                padding: "7px 15px",
+                              }}
+                            >
+                              Unbind
+                            </Button>
+                          </td>
+                        </tr>
+                      ))}
+                  </table>
+                </DisclosurePanel>
+              </Disclosure>
             </section>
           </div>
-          <div className="p-10 bg-black-400 w-full max-w-[1200px] flex flex-col rounded-lg">
-            <h1 className="text-4xl textGradient font-semibold">
+          <div className="p-10 bg-black-400 w-full flex flex-col rounded-lg">
+            <h1 className="text-3xl textGradient font-semibold mb-3">
               Expiration Date and Cost
             </h1>
-            <p className="text-white font-medium text-base pt-3">BITMART</p>
+            <h2 className="text-xl text-white font-semibold mb-3">BITMART</h2>
             <section className="w-full space-y-5">
-              <div className="mt-8">
-                <div className="flex items-center gap-5 p-5 rounded-t-xl bg-black">
-                  <h6 className="text-white font-medium text-lg">RFC/USDT</h6>
-                  <h6 className="text-white/50 font-medium text-lg">
-                    Expiration Dates:
-                  </h6>
-                </div>
-                <div className="bg-black-200 rounded-b-xl p-5">
-                  {data2.length > 0 &&
-                    data2.map((item, index) => {
-                      const isLastItem = index === data.length - 1;
-                      const isFirstChild = index === 0;
-                      return (
-                        <div
-                          className={`${isLastItem && "border-b-0 pb-0"} ${
-                            isFirstChild && "pt-0"
-                          } border-b flex justify-between flex-wrap md:flex-nowrap py-4 items-center border-b-black-400`}
-                          key={index}
-                        >
-                          <div className="flex w-full flex-wrap">
-                            <p className="text-white/50 text-base w-full max-w-[250px]">
-                              {item.title}
-                            </p>
-                            <p className="text-white/50 text-base w-full max-w-[250px]">
-                              {item.date}
-                            </p>
-                          </div>
-                          <p className="text-white text-base flex gap-1 max-w-max w-full self-end">
-                            {item.amount}{" "}
-                            <span className="text-white/50">USDT/Month</span>
-                          </p>
-                        </div>
-                      );
-                    })}
-                </div>
-              </div>
+              <Disclosure
+                as="div"
+                className=""
+                style={{ borderRadius: 10 }}
+                defaultOpen={true}
+              >
+                <DisclosureButton
+                  className="group flex w-full items-center justify-between p-5"
+                  style={{
+                    backgroundColor: "#1e2024",
+                    borderTopRightRadius: 10,
+                    borderTopLeftRadius: 10,
+                  }}
+                >
+                  <span className="text-sm/6 font-medium text-white group-data-[hover]:text-white/80 flex gap-10 items-center">
+                    <span className="text-xl me-3">RFC/USDT</span>
+                    <span className="text-xl">Expiration Dates:</span>
+                  </span>
+                  <FaChevronCircleDown className="text-xl text-white group-data-[open]:rotate-180" />
+                </DisclosureButton>
+                <DisclosurePanel
+                  className="p-5 text-sm/5 text-white/50"
+                  style={{
+                    backgroundColor: "#303339",
+                    borderBottomRightRadius: 10,
+                    borderBottomLeftRadius: 10,
+                  }}
+                >
+                  <table className="w-full master-table text-lg">
+                    {bitmartExpDateCost &&
+                      bitmartExpDateCost.map((item: any) => (
+                        <tr className="text-normal">
+                          <td style={{ width: "calc(50% - 200px)" }}>
+                            {item.name}
+                          </td>
+                          <td style={{ width: "50%" }}>{item.remain}</td>
+                          <td width={200} style={{ textAlign: "right" }}>
+                            <span className="text-white">{item.usdt}</span>{" "}
+                            USDT/
+                            <span style={{ textTransform: "capitalize" }}>
+                              {item.term}
+                            </span>{" "}
+                          </td>
+                        </tr>
+                      ))}
+                  </table>
+                </DisclosurePanel>
+              </Disclosure>
             </section>
           </div>
         </Container>

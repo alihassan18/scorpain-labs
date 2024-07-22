@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "cp .env.dev .env && next dev",
+        "dev": "cp .env.prod .env && next dev",
         "build:dev": "cp .env.dev .env && next build",
         "build": "cp .env.prod .env && next build",
         "dev:win": "copy .env.dev .env && next dev",
