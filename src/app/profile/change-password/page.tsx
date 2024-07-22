@@ -17,7 +17,7 @@ const ChangePassword: React.FC = () => {
                 <div className="col-span-3">
                   <Input
                     className="bg-black-mid text-white w-full"
-                    placeholder={"Select"}
+                    placeholder={""}
                     type="password"
                     name="password"
                   />
@@ -28,7 +28,7 @@ const ChangePassword: React.FC = () => {
                 <div className="col-span-3">
                   <Input
                     className="bg-black-mid text-white w-full"
-                    placeholder={"Select"}
+                    placeholder={""}
                     type="password"
                     name="password"
                   />
@@ -39,7 +39,7 @@ const ChangePassword: React.FC = () => {
                 <div className="col-span-3">
                   <Input
                     className="bg-black-mid text-white w-full"
-                    placeholder={"Select"}
+                    placeholder={""}
                     type="password"
                     name="password"
                   />
