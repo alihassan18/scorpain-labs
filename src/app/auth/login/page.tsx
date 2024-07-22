@@ -51,12 +51,12 @@ const Login = () => {
       console.log(response);
       
       if (response?.data?.access_token) {
-        router.push("/profile/account-overview");
         localStorage.setItem("user", JSON.stringify(response?.data?.record));
         dispatch(updateUser(response.data.record));
         appStore.setUser(response.data.record);
         appStore.setAccessToken(response.data.access_token);
         Cookies.default.set("access_token", response?.data?.access_token);
+        router.push("/profile/account-overview");
       } else {
         toast.error(response.data.message);
         return;
