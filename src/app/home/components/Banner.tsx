@@ -11,7 +11,7 @@ const Banner: React.FC = () => {
           </h1>
           <p className="pt-5 text-base">
             Most projects fail within 6 months of listing on the secondary
-            market due to arbitrage attacks and inside trading, MyTrade MM has
+            market due to arbitrage attacks and inside trading, Scorpoan-labs MM has
             the best anti-arbitrage protection to ensure your MM fund's safety.
             MyTrade MM's solution is to empower projects do in-house market
             making, not only can this solve the trust issue between your project

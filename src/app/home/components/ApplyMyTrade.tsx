@@ -32,7 +32,7 @@ const ApplyMyTrade = () => {
       <Container className="md:py-28 py-10">
         <div className="text-center bg-black-mid rounded-lg py-16 flex flex-col items-center">
           <h1 className="text-4xl textGradient font-semibold">
-            Apply for MyTrade MM Tool
+            Apply for Scorpian-labs MM Tool
           </h1>
           <p className="pt-3 text-base">
             Please fill in the info below, our sales manager will contact you!

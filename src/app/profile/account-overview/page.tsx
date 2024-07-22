@@ -38,25 +38,25 @@ const bitmartExpDateCost : any = [
   {
     'name': 'Basic Services, expires on:',
     'remain': '2024/08/03 , 12 days remaining',
-    'usdt': '500',
+    'usdt': '2500',
     'term': 'montly',
   },
   {
     'name': 'Reference Price, expires on:',
     'remain': '2024/07/03 , Expired',
-    'usdt': '100',
+    'usdt': '1000',
     'term': 'montly',
   },
   {
     'name': 'Cash-out, expires on:',
     'remain': '2024/08/03 , 12 days remaining',
-    'usdt': '100',
+    'usdt': '1000',
     'term': 'montly',
   },
   {
     'name': 'Price Support, expires on:',
     'remain': '2024/08/03 , 12 days remaining',
-    'usdt': '100',
+    'usdt': '1000',
     'term': 'montly',
   }
 ];

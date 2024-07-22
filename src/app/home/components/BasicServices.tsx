@@ -31,7 +31,7 @@ const BasicServices = () => {
       <Container className="md:py-28 py-10">
         <div className="text-center">
           <h1 className="text-4xl textGradient font-semibold">
-            Basic Services - $500 USD / Pair / Month
+            Basic Services - $2500 USD - $4500 USD / Pair / Month
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
             {data.length > 0 &&
