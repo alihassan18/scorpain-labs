@@ -39,25 +39,28 @@ const Login = () => {
     resolver: yupResolver(LoginSchema),
   });
 
+
   const onSubmit: SubmitHandler<FormData> = async () => {
     setIsLoading(true);
-
     let data = {
       email: getValues("email"),
       password: getValues("password"),
     };
     try {
       const response = await authApi.loginEndpoint(data);
-      if (response.status != 200) {
+      console.log(response);
+      
+      if (response?.data?.access_token) {
+        router.push("/profile/account-overview");
+        localStorage.setItem("user", JSON.stringify(response?.data?.record));
+        dispatch(updateUser(response.data.record));
+        appStore.setUser(response.data.record);
+        appStore.setAccessToken(response.data.access_token);
+        Cookies.default.set("access_token", response?.data?.access_token);
+      } else {
         toast.error(response.data.message);
         return;
       }
-      localStorage.setItem("user", JSON.stringify(response?.data?.record));
-      dispatch(updateUser(response.data.record));
-      appStore.setUser(response.data.record);
-      appStore.setAccessToken(response.data.access_token);
-      Cookies.default.set("access_token", response?.data?.access_token);
-      router.push("/profile/account-overview");
     } catch (error: any) {
       toast.error(error);
       console.log("Error In Login", error);
@@ -65,6 +68,7 @@ const Login = () => {
       setIsLoading(false);
     }
   };
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
