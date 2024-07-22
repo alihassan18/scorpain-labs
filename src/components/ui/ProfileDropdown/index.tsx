@@ -78,7 +78,7 @@ const ProfileDropdown = ({ home }: Iprops) => {
             }} // Toggle dropdown state
           >
             <div className={`${home && "hidden"} text-base min-w-20`}>
-              {userData?.username}
+              {/* {userData?.username} */}rfc
             </div>
             <i
               className={`${

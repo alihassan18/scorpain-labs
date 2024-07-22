@@ -27,9 +27,15 @@ const activeExchangeData : any = [
     'bmx': '0',
   },
   {
-    'name': 'Manual Operation',
+    'name': 'Control Operation',
     'rfc': '324253',
     'usdt': '8706.49',
+    'bmx': '0',
+  },
+  {
+    'name': 'Uniswap Support',
+    'rfc': '200000',
+    'usdt': '6700.49',
     'bmx': '0',
   }
 ];
@@ -74,7 +80,7 @@ const AccountOverview: React.FC = () => {
         <Container className="flex justify-center flex-col gap-10">
           <div className="p-10 bg-black-400 w-full flex flex-col rounded-lg">
             <h1 className="text-3xl textGradient font-semibold mb-3">Account Overview</h1>
-            <h3 className="text-xl text-white mb-10">Account Name: {user?.username}</h3>
+            <h3 className="text-xl text-white mb-10">Account Name: rfc</h3>
             <h2 className="text-2xl text-white font-semibold mb-3">List of Active Exchanges</h2>
             <section className="w-full space-y-5">
               <Disclosure as="div" className="" style={{borderRadius:10}} defaultOpen={true}>
