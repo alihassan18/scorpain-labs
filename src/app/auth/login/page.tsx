@@ -57,7 +57,7 @@ const Login = () => {
       appStore.setUser(response.data.record);
       appStore.setAccessToken(response.data.access_token);
       Cookies.default.set("access_token", response?.data?.access_token);
-      router.push("/app");
+      router.push("/profile/account-overview");
     } catch (error: any) {
       toast.error(error);
       console.log("Error In Login", error);
