@@ -9,7 +9,7 @@ import { IUser } from "@/interfaces/user.interface";
 // @ts-ignore
 import { Menu, MenuItem, MenuItems } from "@headlessui/react";
 import { MdOutlineLogout } from "react-icons/md";
-import { FaStreetView } from "react-icons/fa";
+import { FaStreetView, FaRegUserCircle } from "react-icons/fa";
 import { AiOutlineApi } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
 
@@ -30,6 +30,7 @@ const ProfileDropdown = ({ home }: Iprops) => {
   } = useGetMeQuery({});
 
   const userNavigation = [
+    { name: "Profile", icon: <FaRegUserCircle />, href: "/profile" },
     {
       name: `${home ? "Dashboard" : "Account Overview"}`,
       icon: <FaStreetView />,

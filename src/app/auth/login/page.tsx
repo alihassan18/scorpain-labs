@@ -39,7 +39,6 @@ const Login = () => {
     resolver: yupResolver(LoginSchema),
   });
 
-
   const onSubmit: SubmitHandler<FormData> = async () => {
     setIsLoading(true);
     let data = {
@@ -49,7 +48,7 @@ const Login = () => {
     try {
       const response = await authApi.loginEndpoint(data);
       console.log(response);
-      
+
       if (response?.data?.access_token) {
         localStorage.setItem("user", JSON.stringify(response?.data?.record));
         dispatch(updateUser(response.data.record));

@@ -12,8 +12,19 @@ const config: Config = {
           DEFAULT: "#000000",
           mid: "#27292E",
           dull: "#1D2024",
+          dark: "#161522",
           200: "#2C2F36",
           400: "#46484E"
+        },
+        green: {
+          200: "#29AF27",
+          400: "#4AFF33"
+        },
+        orange: {
+          dark: '#FFB16A'
+        },
+        red: {
+          dull: "#FF3838"
         },
         primary: "#FFB82F",
         secondary: "#333333",
