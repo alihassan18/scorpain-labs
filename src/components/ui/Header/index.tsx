@@ -12,7 +12,7 @@ const Navigation = [
   {
     name: "Home",
     icon: <MdOutlineHome />,
-    href: "/",
+    href: "/profile",
   },
   {
     name: "Features & Pricing",
