@@ -660,10 +660,27 @@ input[type="number"] {
 }
 
 .master-table {
-  border-collapse: collapse; /* Ensure cells do not have space between them */
-    width: 100%;
+  border-collapse: collapse;
+  /* Ensure cells do not have space between them */
+  width: 100%;
 }
 
 .master-table td {
   padding-bottom: 10px;
+}
+
+
+.handle-navigation>.swiper-button-prev,
+.handle-navigation>.swiper-button-next {
+  top: 110% !important;
+  background: #FFD700 !important;
+  opacity: 1 !important;
+  padding: 20px !important;
+  left: 0 !important;
+  size: 14px !important;
+  color: black !important;
+}
+
+.handle-navigation>.swiper-button-next {
+  left: 70px !important;
 }

@@ -6,13 +6,18 @@ const config: Config = {
     extend: {
       fontFamily: {
         display: ["var(--font-futura)", ...fontFamily.sans],
+        inter: ["var(--font-inter)"],
+        slussen: ['var(--font-slussen-mono)']
       },
       colors: {
+        main: "#4169E1",
+        secondary: "#FFD700",
         black: {
           DEFAULT: "#000000",
           mid: "#27292E",
           dull: "#1D2024",
           dark: "#161522",
+          100: "#112121",
           200: "#2C2F36",
           400: "#46484E"
         },
@@ -27,7 +32,6 @@ const config: Config = {
           dull: "#FF3838"
         },
         primary: "#FFB82F",
-        secondary: "#333333",
         darkBlack: "#001D41",
         lightGray: "#8F9091",
         slate: "#E9E9E9",
@@ -49,6 +53,14 @@ const config: Config = {
       lineHeight: {
         0: "0",
       },
+      backgroundImage: {
+        banner: "url('/assets/images/landing-page/banner-bg.svg')",
+        mission: "url('/assets/images/landing-page/our-middion-bg.svg')",
+        'custom-gradient': 'linear-gradient(to top, rgba(117, 33, 33, 0), rgba(117, 33, 33, 0.02))',
+        'custom-gradient2': 'linear-gradient(to top, rgba(117, 33, 33, 0.02), rgba(117, 33, 33, 0))',
+        'custom-gradient3': 'linear-gradient(to top, rgba(117, 33, 33, 0), rgba(117, 33, 33, 0.03))',
+        'custom-gradient4': 'linear-gradient(to top, rgba(117, 33, 33, 0.03), rgba(117, 33, 33, 0))',
+      }
     },
   },
   plugins: [require("@tailwindcss/forms")],
