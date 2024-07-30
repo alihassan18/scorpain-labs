@@ -29,12 +29,12 @@ const StatusSection: React.FC = () => {
               const lastChild = data.length - 1 === index;
               return (
                 <div
-                  className={`flex gap-5 items-center py-[61px] border-t border-white/15 ${
+                  className={`flex sm:flex-row flex-col sm:gap-5 gap-[11px] sm:items-center sm:py-[61px] py-[30px] border-t border-white/15 ${
                     lastChild && "border-b"
                   }`}
                   key={index}
                 >
-                  <h2 className="text-white text-6xl leading-[72px] tracking-[-2.16px] font-slussen">
+                  <h2 className="text-white sm:text-6xl text-[32px] sm:leading-[72px] leading-[40px] tracking-[-2.16px] font-slussen">
                     {item.title}
                   </h2>
                   <p className="text-[#71C2FF] text-base font-medium font-inter uppercase leading-[25.6px] tracking-[0.96px] max-w-[330px]">

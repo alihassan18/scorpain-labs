@@ -10,9 +10,7 @@ const contacts = [
   { name: "Contact", href: "/Contact" },
   { name: "About Us", href: "/About Us" },
   { name: "Privacy Policy", href: "/Privacy Policy" },
-  { name: "KYC & AML Policy", href: "/KYC & AML Policy" },
   { name: "Terms of Use", href: "/Terms of Use" },
-  { name: "FAQ", href: "/FAQ" },
 ];
 
 const Navigation = [
@@ -42,7 +40,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="flex items-center gap-9 mt-[124px] h-max">
+        <div className="flex sm:flex-row flex-col items-center gap-9 mt-[124px] h-max">
           <Button className="bg-secondary font-slussen whitespace-nowrap !text-2xl tracking-[0.34px] !text-black-100 flex items-center !py-2 !px-6 rounded-none gap-8 ">
             Get Started <BsArrowUpRight className="text-sm" />
           </Button>

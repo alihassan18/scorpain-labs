@@ -20,8 +20,32 @@ import Icon6 from "@/components/common/Icons/Icon6";
 import Icon7 from "@/components/common/Icons/Icon7";
 import Icon8 from "@/components/common/Icons/Icon8";
 import Icon9 from "@/components/common/Icons/Icon9";
+import Image from "next/image";
 import React from "react";
 
+const data = [
+  { name: "", src: "/assets/images/icons/Figure.svg" },
+  { name: "", src: "/assets/images/icons/Figure-1.svg" },
+  { name: "", src: "/assets/images/icons/Figure-2.svg" },
+  { name: "", src: "/assets/images/icons/Figure-3.svg" },
+  { name: "", src: "/assets/images/icons/Figure-4.svg" },
+  { name: "", src: "/assets/images/icons/Figure-5.svg" },
+  { name: "", src: "/assets/images/icons/Figure-6.svg" },
+  { name: "", src: "/assets/images/icons/Figure-7.svg" },
+  { name: "", src: "/assets/images/icons/Figure-8.svg" },
+  { name: "", src: "/assets/images/icons/Figure-9.svg" },
+  { name: "", src: "/assets/images/icons/Figure-10.svg" },
+  { name: "", src: "/assets/images/icons/Figure-11.svg" },
+  { name: "", src: "/assets/images/icons/Figure-12.svg" },
+  { name: "", src: "/assets/images/icons/Figure-13.svg" },
+  { name: "", src: "/assets/images/icons/Figure-14.svg" },
+  { name: "", src: "/assets/images/icons/Figure-15.svg" },
+  { name: "", src: "/assets/images/icons/Figure-16.svg" },
+  { name: "", src: "/assets/images/icons/Figure-17.svg" },
+  { name: "", src: "/assets/images/icons/Figure-18.svg" },
+  { name: "", src: "/assets/images/icons/Figure-19.svg" },
+  { name: "", src: "/assets/images/icons/Figure-20.svg" },
+];
 const PartnerExchange = () => {
   return (
     <>
@@ -29,31 +53,21 @@ const PartnerExchange = () => {
         <h1 className="text-center font-slussen text-5xl font-bold">
           Partner Exchanges
         </h1>
-        <Container size="xl" className="flex justify-center">
-          <div className="flex justify-center mt-[71px] w-full max-w-[1114.44px]  px-[87px]">
-            <div className="grid lg:grid-cols-7 sm:grid-cols-4 grid-cols-3 gap-16">
-              <Icon1 />
-              <Icon2 />
-              <Icon3 />
-              <Icon4 />
-              <Icon5 />
-              <Icon6 />
-              <Icon7 />
-              <Icon8 />
-              <Icon9 />
-              <Icon10 />
-              <Icon11 />
-              <Icon12 />
-              <Icon13 />
-              <Icon14 />
-              <Icon15 />
-              <Icon16 />
-              <Icon17 />
-              <Icon18 />
-              <Icon19 />
-              <Icon20 />
-              <Icon21 />
-            </div>
+        <Container size="xl" className="flex justify-center w-full">
+          <div className="max-w-[1114.44px] w-full grid md:grid-cols-7 sm:grid-cols-5 grid-cols-3 mt-28">
+            {data.length > 0 &&
+              data.map((item, index) => {
+                return (
+                  <div className="space-y-1" key={index}>
+                    <Image
+                      src={item.src}
+                      alt={item.name}
+                      height={101}
+                      width={115}
+                    />
+                  </div>
+                );
+              })}
           </div>
         </Container>
       </div>
