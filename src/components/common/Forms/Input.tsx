@@ -44,7 +44,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <input
           type={inputType}
           className={cn(
-            "flex w-full rounded-lg border bg-transparent border-input xs:text-sm focus-visible:outline-none focus-visible:ring-0 focus-visible:border-primary  xs:border-[#D0D0D026]/30 disabled:cursor-not-allowed disabled:opacity-50",
+            "flex w-full rounded-lg border bg-transparent border-input xs:text-sm focus-visible:outline-none focus-visible:ring-0 focus-visible:border-white  xs:border-white disabled:cursor-not-allowed disabled:opacity-50",
             className,
             sizeStyles[size],
             AddIcon && "pl-12"
@@ -66,7 +66,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="w-6 h-6 xs:h-5 xs:w-5 text-gray-500"
+                className="w-6 h-6 xs:h-5 xs:w-5 text-white"
               >
                 <path
                   strokeLinecap="round"
@@ -86,7 +86,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="w-6 h-6 xs:h-5 xs:w-5 text-gray-500"
+                className="w-6 h-6 xs:h-5 xs:w-5 text-white"
               >
                 <path
                   strokeLinecap="round"

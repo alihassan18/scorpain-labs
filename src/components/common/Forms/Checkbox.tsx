@@ -29,7 +29,7 @@ const CheckBox: React.FC<CheckBoxProps> = ({
       />
       <label
         htmlFor="disabled-checkbox"
-        className={`ms-2 text-base font-medium ${labelClass}`}
+        className={`ms-2 !text-xs font-medium ${labelClass}`}
       >
         {label}
       </label>

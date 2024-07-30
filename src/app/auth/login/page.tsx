@@ -6,7 +6,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import InputError from "@/components/common/Forms/InputError";
 import { LoginSchema } from "@/utils/schema";
-import { ImageComponent } from "@/components/common";
+import { Container, ImageComponent } from "@/components/common";
 import { Arrow } from "@/components/common/Icons";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
@@ -17,6 +17,8 @@ import AOS from "aos";
 import * as Cookies from "js-cookie";
 import { useDispatch } from "react-redux";
 import { updateUser } from "@/redux/slice/user";
+import { BsArrowUpRight } from "react-icons/bs";
+import Image from "next/image";
 
 interface FormData {
   email: string;
@@ -79,70 +81,92 @@ const Login = () => {
 
   return (
     <>
-      <div className="md:py-20 bg-black-dull min-h-[100vh] border-b py-10 pb-5 pt-8 flex justify-between items-center relative flex-col">
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="w-full sm:w-[500px] p-10 shadow-arround relative rounded-lg"
+      <div className="md:py-20 py-10 bg-main relative">
+        <Container
+          size="xl"
+          className="grid md:grid-cols-2 grid-cols-1 items-center gap-10"
         >
-          <img
-            src="/assets/images/plain-logo.png"
-            alt=""
-            className="mx-auto w-[30%] xs:hidden block 2xl:w-[30%]"
-          />
-          <div
-            className="xs:shadow-xl xs:bg-white xs:rounded-[20px] md:mt-16 mt-8 xs:p-6"
-            data-aos="fade-up"
-          >
-            <div className="mt-2 sm:mt-4 spae-y-1">
-              <label htmlFor="" className="text-white">
-                Email
-              </label>
-              <Input
-                placeholder="Email Address"
-                name="email"
-                register={register}
-                // AddIcon={<EmailIcon />}
-                className="text-white"
-              />
-              <InputError error={errors.email?.message} />
-            </div>
-            <div className="mt-4 2xl:mt-6 space-y-1">
-              <label htmlFor="" className="text-white">
-                Password
-              </label>
-              <Input
-                placeholder="Password"
-                type="password"
-                name="password"
-                className="text-white"
-                register={register}
-                // AddIcon={<PasswordIcon />}
-              />
-              <InputError error={errors.password?.message} />
-            </div>
-            {/* <div className="flex mt-2 ml-2">
+          <div className="">
+            <Image
+              src="/assets/images/login/login-banner.svg"
+              alt="login banner"
+              height={652}
+              width={630}
+            />
+          </div>
+          <div className="flex justify-center">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="w-full sm:w-[409px] shadow-arround relative rounded-lg"
+            >
+              <h2 className="font-bold text-white text-[28px] leading-[36.68px] font-slussen">
+                Login
+              </h2>
+              <p className="font-slussen text-xl font-normal leading-[26.2px] tracking-[0.34px] text-[#F6F9FCE5]/90">
+                See what is going on with your business
+              </p>
+              <div
+                className="xs:shadow-xl xs:bg-white xs:rounded-[20px] mt-8 xs:p-6"
+                data-aos="fade-up"
+              >
+                <div className="spae-y-1">
+                  <label
+                    htmlFor=""
+                    className="text-white font-slussen font-semibold text-sm mb-2"
+                  >
+                    Email
+                  </label>
+                  <Input
+                    placeholder="Email Address"
+                    name="email"
+                    register={register}
+                    // AddIcon={<EmailIcon />}
+                    className="text-white border-white rounded-none placeholder:text-white font-slussen"
+                  />
+                  <InputError error={errors.email?.message} />
+                </div>
+                <div className="mt-4 2xl:mt-6 space-y-1">
+                  <label
+                    htmlFor=""
+                    className="text-white font-slussen font-semibold text-sm mb-2"
+                  >
+                    Password
+                  </label>
+                  <Input
+                    placeholder="Password"
+                    type="password"
+                    name="password"
+                    className="text-white border-white rounded-none placeholder:text-white font-slussen"
+                    register={register}
+                    // AddIcon={<PasswordIcon />}
+                  />
+                  <InputError error={errors.password?.message} />
+                </div>
+                {/* <div className="flex mt-2 ml-2">
               <Link href="/auth/forgot-password">
                 <p className="cursor-pointer text-base xs:text-xs font-medium underline text-royalBlue">
                   Forgot Password?
                 </p>
               </Link>
             </div> */}
-            <div className="pt-4">
-              <div className=" xs:flex xs:justify-center items-center ">
-                <Button
-                  disabled={isLoading}
-                  className="mt-2 2xl:mt-4 rounded-md w-full bg-primary flex gap-2 2xl:!py-4 xs:!text-sm !text-xl 2xl:!text-[22px] xs:w-[215px]"
-                  type="submit"
-                >
-                  {isLoading ? "Loading..." : "Login Now"}
-                  <span>
-                    <Arrow className="xs:h-3 xs:w-3" />
-                  </span>
-                </Button>
+                <div className="pt-4">
+                  <div className=" xs:flex xs:justify-center items-center ">
+                    <Button
+                      disabled={isLoading}
+                      className="bg-secondary mt-10 w-full font-slussen whitespace-nowrap !text-2xl tracking-[0.34px] !text-black-100 flex items-center !py-2 !px-6 rounded-none gap-8  xs:w-[215px]"
+                      type="submit"
+                    >
+                      {isLoading ? "Loading..." : "Login"}
+                      <span>
+                        <BsArrowUpRight className="text-sm" />
+                      </span>
+                    </Button>
+                  </div>
+                </div>
               </div>
-            </div>
+            </form>
           </div>
-        </form>
+        </Container>
       </div>
     </>
   );

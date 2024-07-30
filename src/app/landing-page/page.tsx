@@ -7,6 +7,7 @@ import CashOut from "./(landingPage)/CashOut";
 import TradeView from "./(landingPage)/TradeView";
 import Services from "./(landingPage)/Services";
 import Prices from "./(landingPage)/Prices";
+import PartnerExchange from "./(landingPage)/PartnerExchange";
 
 const LandingPage: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const LandingPage: React.FC = () => {
       <TradeView />
       <Services />
       <Prices />
+      <PartnerExchange />
     </Fragment>
   );
 };

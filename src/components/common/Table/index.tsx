@@ -30,7 +30,11 @@ const Table: React.FC<TableProps> = ({
               className={`px-6 py-2 text-sm text-white text-left w-[200px] ${headingClass}`}
               // style={{ width: columnWidth }}
             >
-              <div className={`py-2 ${header !== header.index - 1 ? "" : ""}`}>
+              <div
+                className={`py-2 font-slussen ${
+                  header !== header.index - 1 ? "" : ""
+                }`}
+              >
                 {header}
               </div>
             </th>
@@ -50,13 +54,13 @@ const Table: React.FC<TableProps> = ({
               return (
                 <td
                   key={cellIndex}
-                  className={`px-6 py-2 text-sm text-white/80 text-left ${dataClass} ${
+                  className={`px-6 py-2 text-sm text-white/80 text-left font-slussen ${dataClass} ${
                     cellIndex === 1 && "sideClass"
                   } ${sideClass}`}
                   // style={{ width: columnWidth }}
                 >
                   <div
-                    className={`py-2 whitespace-nowrap ${
+                    className={`py-2 whitespace-nowrap font-slussen ${
                       cellIndex !== row.length - 1 ? "" : ""
                     }`}
                   >

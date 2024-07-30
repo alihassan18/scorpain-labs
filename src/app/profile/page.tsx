@@ -8,9 +8,11 @@ import VipServices from "./_components/VipServices";
 const Profile: React.FC = () => {
   return (
     <Fragment>
-      <div className="bg-black-dull border-b py-10">
-        <Container className="space-y-5">
-          <h1 className="text-4xl text-white font-semibold">Basic Services</h1>
+      <div className="bg-main border-b py-10">
+        <Container size="xl" className="space-y-5">
+          <h1 className="text-4xl font-slussen text-white font-bold">
+            Basic Services
+          </h1>
           <VolumeSupport />
           <LiquiditySupport />
           <ManualOperation />

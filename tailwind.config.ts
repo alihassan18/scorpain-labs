@@ -12,6 +12,12 @@ const config: Config = {
       colors: {
         main: "#4169E1",
         secondary: "#FFD700",
+        blue: {
+          dark: "#0A2540"
+        },
+        yellow: {
+          700: "#FFD700"
+        },
         black: {
           DEFAULT: "#000000",
           mid: "#27292E",
@@ -29,6 +35,7 @@ const config: Config = {
           dark: '#FFB16A'
         },
         red: {
+          dark: "#FF0000",
           dull: "#FF3838"
         },
         primary: "#FFB82F",
