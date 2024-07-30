@@ -128,7 +128,7 @@ const VipServices: React.FC = () => {
                   <CheckBox
                     label={
                       <div className="flex items-center gap-3 relative">
-                        <p className="text-sm font-slussen whitespace-nowrap text-xs">
+                        <p className="text-sm font-slussen whitespace-nowrap">
                           Big sell orders
                         </p>
                         <Tooltip
