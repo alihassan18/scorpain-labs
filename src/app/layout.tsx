@@ -125,6 +125,7 @@ export default function RootLayout({
             {pathname.includes("landing-page") ? null : <Header />}
             <main id="main-inn" style={{ height: "calc(100vh - 138px)" }}>
               {children}
+              <Footer />
             </main>
             {/* <Footer /> */}
             {/* {pathname.includes("app") || pathname.includes("auth") ? (
