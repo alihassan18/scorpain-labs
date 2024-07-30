@@ -1,11 +1,22 @@
-import {
-  Banner,
-  FAQ,
-  VipServices,
-  Testimonials,
-  ApplyMyTrade,
-  BasicServices,
-} from "./home/index";
+// import {
+//   Banner,
+//   FAQ,
+//   VipServices,
+//   Testimonials,
+//   ApplyMyTrade,
+//   BasicServices,
+// } from "./home/index";
+import Apply from "./landing-page/(landingPage)/Apply";
+import Banner from "./landing-page/(landingPage)/Banner";
+import CashOut from "./landing-page/(landingPage)/CashOut";
+import Faq from "./landing-page/(landingPage)/Faq";
+import OurMission from "./landing-page/(landingPage)/OurMission";
+import PartnerExchange from "./landing-page/(landingPage)/PartnerExchange";
+import Prices from "./landing-page/(landingPage)/Prices";
+import Services from "./landing-page/(landingPage)/Services";
+import ServiceTestimonials from "./landing-page/(landingPage)/ServiceTestimonials";
+import StatusSection from "./landing-page/(landingPage)/StatusSection";
+import TradeView from "./landing-page/(landingPage)/TradeView";
 
 export default function Home() {
   return (
@@ -39,14 +50,24 @@ export default function Home() {
       <meta name="twitter:image" content="/assets/images/artofyolo.png" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image:alt" content="Yolo Selection" /> */}
-      <div className="w-full overflow-hidden">
+      <div className="w-full">
         <Banner />
+        <StatusSection />
+        <OurMission />
+        <CashOut />
+        <TradeView />
+        <Services />
+        <Prices />
+        <PartnerExchange />
+        <ServiceTestimonials />
+        <Apply />
+        <Faq />
+        {/* <Banner />
         <BasicServices />
         <VipServices />
         <Testimonials />
         <ApplyMyTrade />
-
-        <FAQ />
+        <FAQ /> */}
       </div>
     </>
   );

@@ -65,7 +65,7 @@ const Header: React.FC = () => {
             )}
           </div>
         </div>
-        <div className="relative w-full">
+        <div className="relative w-full sm:hidden block">
           <div className="absolute w-full">
             {isOpen === true && (
               <ul className="flex gap-8 flex-col bg-blue-dark p-5 w-full">

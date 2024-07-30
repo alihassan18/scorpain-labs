@@ -32,7 +32,7 @@ const Services: React.FC = () => {
   // const prevRef = useRef<HTMLButtonElement>(null);
   // const nextRef = useRef<HTMLButtonElement>(null);
   return (
-    <div className="bg-main bg-opacity-[2%] py-[30px]">
+    <div className="bg-main bg-opacity-[2%] md:py-[50px] py-8">
       <Container size="xl">
         <h2 className="text-[#0A2540] text-5xl font-bold font-slussen leading-[48px] tracking-[0.96px]">
           Services

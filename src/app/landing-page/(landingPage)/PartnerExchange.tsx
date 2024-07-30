@@ -49,16 +49,16 @@ const data = [
 const PartnerExchange = () => {
   return (
     <>
-      <div className="py-40">
-        <h1 className="text-center font-slussen text-5xl font-bold">
+      <div className="sm:py-40 py-20">
+        <h1 className="text-center font-slussen sm:text-5xl text-2xl font-bold">
           Partner Exchanges
         </h1>
         <Container size="xl" className="flex justify-center w-full">
-          <div className="max-w-[1114.44px] w-full grid md:grid-cols-7 sm:grid-cols-5 grid-cols-3 mt-28">
+          <div className="max-w-[1114.44px] w-full grid md:grid-cols-7 sm:grid-cols-5 grid-cols-3 sm:mt-28 mt-16">
             {data.length > 0 &&
               data.map((item, index) => {
                 return (
-                  <div className="space-y-1" key={index}>
+                  <div className="space-y-1 flex justify-center" key={index}>
                     <Image
                       src={item.src}
                       alt={item.name}

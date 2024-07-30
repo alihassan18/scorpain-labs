@@ -36,7 +36,7 @@ const Prices: React.FC = () => {
               data.map((item, index) => {
                 return (
                   <div
-                    className="bg-[#0A2540] md:p-[50px] sm:p[30px] p-8 w-full max-w-[458px] flex flex-col justify-between items-center"
+                    className="bg-[#0A2540] md:p-[50px] sm:p[30px] p-8 sm:max-w-[458px] w-full flex flex-col justify-between items-center"
                     key={index}
                   >
                     <div className="">

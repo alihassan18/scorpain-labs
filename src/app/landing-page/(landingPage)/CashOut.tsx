@@ -54,11 +54,11 @@ const CashOut: React.FC = () => {
             data.map((item, index) => {
               return (
                 <div
-                  className="flex sm:flex-row flex-col gap-16 sm:sticky static sm:top-[65px] top-0 bg-white"
+                  className="flex sm:flex-row flex-col gap-16 sm:mt-0 mt-16 sm:sticky static sm:top-[65px] top-0 bg-white"
                   key={index}
                 >
-                  <div className="max-w-[581px] w-full relative h-[702px] flex flex-col justify-between">
-                    <div className="h-[150px] w-full bg-custom-gradient" />
+                  <div className="max-w-[581px] w-full relative sm:h-[702px] h-auto flex flex-col justify-between">
+                    <div className="h-[150px] w-full sm:block hidden  bg-custom-gradient" />
                     <div className="">
                       <h2 className="uppercase text-4xl font-slussen font-bold leading-[36px] tracking-[0.72px] text-[#0A2540]">
                         {item.title}
@@ -67,7 +67,7 @@ const CashOut: React.FC = () => {
                         {item.description}
                       </p>
                     </div>
-                    <div className="h-[150px] font-slussen bg-custom-gradient2 w-full" />
+                    <div className="h-[150px] font-slussen sm:block hidden bg-custom-gradient2 w-full" />
                   </div>
                   <div className="relative sm:block hidden w-0.5 bg-[#56718D1A]/10 h-[702px]">
                     <div

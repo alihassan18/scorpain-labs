@@ -5,13 +5,13 @@ import { BsArrowUpRight } from "react-icons/bs";
 const Apply = () => {
   return (
     <>
-      <div className="py-[90px]">
+      <div className="sm:py-[60px] py-[30px]">
         <Container size="xl" className="flex justify-center">
           <div className="w-full max-w-[633.12px]">
-            <h2 className="text-[28px] font-bold font-slussen text-center">
+            <h2 className="sm:text-[28px] text-2xl font-bold font-slussen text-center">
               Apply for Scorpian-labs MM Tool
             </h2>
-            <p className="text-[20px] font-normal font-slussen !text-[#56718D] text-center mt-5">
+            <p className="text-[20px] font-normal leading-tight font-slussen !text-[#56718D] text-center mt-5">
               Please fill in the info below, our sales manager will contact you!
             </p>
 

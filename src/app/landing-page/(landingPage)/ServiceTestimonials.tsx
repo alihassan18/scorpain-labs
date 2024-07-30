@@ -37,7 +37,7 @@ const ServiceTestimonials: React.FC = () => {
         <p className="max-w-[992px] sm:text-2xl text-lg font-normal font-slussen leading-[38.4px] tracking-[0.34px] text-[#56718D] pt-4">
           What People Are Saying About Us
         </p>
-        <div className="my-20 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+        <div className="sm:my-20 py-10 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
           {data.length > 0 &&
             data.map((item, index) => {
               return (
