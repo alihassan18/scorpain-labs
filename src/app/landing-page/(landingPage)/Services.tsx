@@ -1,11 +1,8 @@
 "use client";
 import React, { useRef } from "react";
-import { Container } from "@/components/common";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Navigation } from "swiper/modules";
+import { Button, Container } from "@/components/common";
 import Image from "next/image";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import { BsArrowUpRight } from "react-icons/bs";
 
 const data = [
   {
@@ -44,56 +41,43 @@ const Services: React.FC = () => {
           Scorpian Labs offers comprehensive solutions for digital asset issuers
           at all stages.
         </p>
-        <div className="my-20">
-          <Swiper
-            spaceBetween={24}
-            navigation={true}
-            modules={[Navigation]}
-            // navigation={{
-            //   prevEl: prevRef.current,
-            //   nextEl: nextRef.current,
-            // }}
-            // modules={[Navigation]}
-            className="mySwiper !overflow-visible handle-navigation"
-            // onBeforeInit={(swiper) => {
-            //   if (
-            //     swiper.params.navigation &&
-            //     typeof swiper.params.navigation !== "boolean"
-            //   ) {
-            //     swiper.params.navigation.prevEl = prevRef.current;
-            //     swiper.params.navigation.nextEl = nextRef.current;
-            //   }
-            // }}
-          >
-            {data.length > 0 &&
-              data.map((item, index) => {
-                return (
-                  <SwiperSlide key={index} className="max-w-[458px] h-[630px]">
-                    <div className="bg-main p-12 h-[630px]">
-                      <div className="flex justify-between">
-                        <Image
-                          src={item.src}
-                          alt={item.title}
-                          height={72}
-                          width={72}
-                        />
-                        <span className="font-slussen text-white font-normal text-base leading-[25.6px] tracking-[0.22px]">
-                          {item.id}
-                        </span>
-                      </div>
-                      <div className="flex flex-col gap-12 mt-28">
-                        <h3 className="max-w-[163px] text-white font-slussen text-2xl font-normal leading-[31.44px] tracking-[0.34px]">
-                          {item.title}
-                        </h3>
-                        <p className="font-normal text-white/90 font-slussen leading-[23.58px] tracking-[0.34px] texy-lg">
-                          {item.description}
-                        </p>
-                      </div>
+        <div className="my-20 flex gap-6">
+          {data.length > 0 &&
+            data.map((item, index) => {
+              return (
+                <div
+                  key={index}
+                  className="max-w-[458px] h-[630px] overflow-hidden group"
+                >
+                  <div className="bg-main p-12 h-[630px] flex-grow">
+                    <div className="flex justify-between">
+                      <Image
+                        src={item.src}
+                        alt={item.title}
+                        height={72}
+                        width={72}
+                      />
+                      <span className="font-slussen text-white font-normal text-base leading-[25.6px] tracking-[0.22px]">
+                        {item.id}
+                      </span>
                     </div>
-                  </SwiperSlide>
-                );
-              })}
-          </Swiper>
+                    <div className="flex flex-col gap-12 mt-28">
+                      <h3 className="max-w-[163px] text-white font-slussen text-2xl font-normal leading-[31.44px] tracking-[0.34px]">
+                        {item.title}
+                      </h3>
+                      <p className="font-normal text-white/90 font-slussen leading-[23.58px] tracking-[0.34px] texy-lg">
+                        {item.description}
+                      </p>
+                    </div>
+                    <div className="mt-40 group-hover:mt-0 transition-all duration-300">
+                      <Button className="bg-secondary mt-12 font-slussen whitespace-nowrap !text-2xl tracking-[0.34px] !text-black-100 flex items-center !py-2 !px-6 rounded-none gap-8 ">
+                        Get in Touch <BsArrowUpRight className="text-sm" />
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
         </div>
       </Container>
     </div>

@@ -7,6 +7,10 @@ import CashOut from "./(landingPage)/CashOut";
 import TradeView from "./(landingPage)/TradeView";
 import Services from "./(landingPage)/Services";
 import Prices from "./(landingPage)/Prices";
+import PartnerExchange from "./(landingPage)/PartnerExchange";
+import ServiceTestimonials from "./(landingPage)/ServiceTestimonials";
+import Apply from "./(landingPage)/Apply";
+import Faq from "./(landingPage)/Faq";
 
 const LandingPage: React.FC = () => {
   return (
@@ -19,6 +23,10 @@ const LandingPage: React.FC = () => {
       <TradeView />
       <Services />
       <Prices />
+      <PartnerExchange />
+      <ServiceTestimonials />
+      <Apply />
+      <Faq />
     </Fragment>
   );
 };
