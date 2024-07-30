@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Container, Button } from "@/components/common";
-import Image from "next/image";
 import { BsArrowUpRight } from "react-icons/bs";
+import Image from "next/image";
 
 const Banner: React.FC = () => {
   return (
