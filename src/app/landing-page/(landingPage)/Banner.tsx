@@ -15,7 +15,7 @@ const Banner: React.FC = () => {
             <h1 className="sm:max-w-[602px] max-w-full text-white sm:text-8xl text-[28px] font-bold sm:leading-[92px] leading-[36.68px] font-slussen">
               Crypto Market Maker SaaS Tool
             </h1>
-            <div className="flex justify-end w-full">
+            <div className="flex animate justify-end w-full">
               <Image
                 src="/assets/images/landing-page/banner-image.svg"
                 alt="Banner"

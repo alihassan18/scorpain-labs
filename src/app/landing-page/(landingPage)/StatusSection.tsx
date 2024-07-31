@@ -1,5 +1,8 @@
+"use client";
 import { Container } from "@/components/common";
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const data = [
   //   {
@@ -20,6 +23,10 @@ const data = [
 ];
 
 const StatusSection: React.FC = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <Fragment>
       <div className="bg-[#16234B] py-[65px]">
@@ -34,10 +41,18 @@ const StatusSection: React.FC = () => {
                   }`}
                   key={index}
                 >
-                  <h2 className="text-white sm:text-6xl text-[32px] sm:leading-[72px] leading-[40px] tracking-[-2.16px] font-slussen">
+                  <h2
+                    data-aos="fade-left"
+                    data-aos-easing="linear"
+                    className="text-white sm:text-6xl text-[32px] sm:leading-[72px] leading-[40px] tracking-[-2.16px] font-slussen"
+                  >
                     {item.title}
                   </h2>
-                  <p className="text-[#71C2FF] text-base font-medium font-inter uppercase leading-[25.6px] tracking-[0.96px] max-w-[330px]">
+                  <p
+                    data-aos="fade-left"
+                    data-aos-duration="1000"
+                    className="text-[#71C2FF] text-base font-medium font-inter uppercase leading-[25.6px] tracking-[0.96px] max-w-[330px]"
+                  >
                     {item.description}
                   </p>
                 </div>
