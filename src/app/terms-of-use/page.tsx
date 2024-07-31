@@ -1,12 +1,12 @@
 import React from "react";
 import Baner from "./Baner";
-import Policies from "./Policies";
+import Terms from "./Terms";
 
 const page = () => {
   return (
     <>
       <Baner />
-      <Policies />
+      <Terms />
     </>
   );
 };

@@ -69,7 +69,7 @@ const Services: React.FC = () => {
                         {item.description}
                       </p>
                     </div>
-                    <div className="">
+                    <div className="relative top-[100%] group-hover:top-0 duration-300">
                       <Button className="bg-secondary !w-full mt-8 font-slussen whitespace-nowrap !text-2xl tracking-[0.34px] !text-black-100 flex items-center !py-2 !px-6 rounded-none gap-8 ">
                         Get in Touch <BsArrowUpRight className="text-sm" />
                       </Button>

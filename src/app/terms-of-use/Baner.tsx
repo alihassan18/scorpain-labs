@@ -10,7 +10,7 @@ const Banner: React.FC = () => {
         <div className="bg-banner py-[90px]">
           <Container size="xl" className="grid grid-cols-2 items-center">
             <h1 className="max-w-[602px] text-white text-8xl font-bold leading-[92px] font-slussen">
-              Privacy Policy
+              Terms of Use
             </h1>
             <div className="flex justify-end w-full animate">
               <Image

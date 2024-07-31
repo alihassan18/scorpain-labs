@@ -15,7 +15,7 @@ const Banner: React.FC = () => {
             <h1 className="sm:max-w-[602px] max-w-full text-white sm:text-8xl text-[28px] font-bold sm:leading-[92px] leading-[36.68px] font-slussen">
               Crypto Market Maker SaaS Tool
             </h1>
-            <div className="flex justify-end w-full">
+            <div className="flex justify-end w-full animate">
               <Image
                 src="/assets/images/landing-page/banner-image.svg"
                 alt="Banner"
@@ -26,7 +26,7 @@ const Banner: React.FC = () => {
               <Image
                 src="/assets/images/login/login-banner.svg"
                 alt="Banner"
-                className="block sm:hidden !w-full height-ato"
+                className="block sm:hidden !w-full height-ato animate"
                 height={446}
                 width={314}
               />

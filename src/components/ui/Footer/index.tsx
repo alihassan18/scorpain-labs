@@ -7,22 +7,12 @@ import { FaMediumM } from "react-icons/fa";
 import { SiYoutubemusic } from "react-icons/si";
 
 const contacts = [
-  { name: "Contact", href: "/Contact" },
-  { name: "About Us", href: "/About Us" },
-  { name: "Privacy Policy", href: "/Privacy Policy" },
-  { name: "Terms of Use", href: "/Terms of Use" },
+  { name: "Contact", href: "/contact" },
+  { name: "About Us", href: "/about-us" },
+  { name: "Privacy Policy", href: "/privacy-policy" },
+  { name: "Terms of Use", href: "/terms-of-use" },
 ];
 
-const Navigation = [
-  {
-    name: "Privacy Policy",
-    href: "/privacy-policy",
-  },
-  {
-    name: "Terms & Conditions",
-    href: "terms",
-  },
-];
 const Footer = () => {
   return (
     <div className="bg-[url('/assets/images/landing-page/footerimg.svg')] bg-cover p-1 pb-12">
