@@ -9,7 +9,7 @@ import { SiYoutubemusic } from "react-icons/si";
 const contacts = [
   { name: "Contact", href: "/Contact" },
   { name: "About Us", href: "/About Us" },
-  { name: "Privacy Policy", href: "/Privacy Policy" },
+  { name: "Privacy Policy", href: "/privacy-policy" },
   { name: "KYC & AML Policy", href: "/KYC & AML Policy" },
   { name: "Terms of Use", href: "/Terms of Use" },
   { name: "FAQ", href: "/FAQ" },
