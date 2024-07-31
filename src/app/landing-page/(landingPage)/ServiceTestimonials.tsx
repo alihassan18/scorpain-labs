@@ -9,40 +9,40 @@ const data = [
     src: "/assets/images/landing-page/man1.svg",
     title: "Founder of SCY",
     description:
-      "MyTrade was incredibly helpful with setup and onboarding, providing valuable insights into MM. They continued to support us, explaining notifications and addressing concerns. The high-touch experience is rare among Web3 vendors. I highly recommend MyTrade MM services for their ease of use, functionality, and excellent customer service.",
+      "MyTrade was incredibly helpful with setup and onboarding, providing valuable insights into MM. They continued to support us, explaining notifications and addressing concerns.",
   },
   {
     id: "02",
     src: "/assets/images/landing-page/man1.svg",
     title: "Founder of a BitMart project",
     description:
-      "MyTrade offers user-friendly and convenient mechanic tools that are incredibly useful. One major benefit is its ability to prevent price swings from attackers and bots, a task difficult to manage manually. Acting like a personal assistant with 24/7 control, MyTrade is well worth its price. Excited to see future updates from the MyTrade team!",
+      "MyTrade offers user-friendly and convenient mechanic tools that are incredibly useful. One major benefit is its ability to prevent price swings from attackers and bots, a task difficult to manage manually.",
   },
   {
     id: "03",
     src: "/assets/images/landing-page/man1.svg",
     title: "Founder of SCY",
     description:
-      "MyTrade provided excellent setup assistance and onboarding explanations. Our conversations significantly enhanced my understanding of MM. Post-setup, their ongoing support refined our process, clarified notifications, and addressed potential concerns. This high-touch experience is rare among Web3 vendors. I highly recommend MyTrade MM services for their ease of use, high functionality, and exceptional customer service.",
+      "MyTrade provided excellent setup assistance and onboarding explanations. Our conversations significantly enhanced my understanding of MM.",
   },
 ];
 
 const ServiceTestimonials: React.FC = () => {
   return (
     <div className="bg-main bg-opacity-[2%] py-[65px]">
-      <Container size="xl" className="!pr-0">
-        <h2 className="text-[#0A2540] text-5xl font-bold font-slussen leading-[48px] tracking-[0.96px]">
+      <Container size="xl">
+        <h2 className="text-[#0A2540] md:text-5xl sm:text-4xl text-2xl font-bold font-slussen leading-[48px] tracking-[0.96px]">
           Testimonials
         </h2>
-        <p className="max-w-[992px] text-2xl font-normal font-slussen leading-[38.4px] tracking-[0.34px] text-[#56718D] pt-4">
+        <p className="max-w-[992px] sm:text-2xl text-lg font-normal font-slussen leading-[38.4px] tracking-[0.34px] text-[#56718D] pt-4">
           What People Are Saying About Us
         </p>
-        <div className="my-20 flex gap-6">
+        <div className="sm:my-20 py-10 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
           {data.length > 0 &&
             data.map((item, index) => {
               return (
-                <div key={index} className="max-w-[458px] h-[630px]">
-                  <div className="bg-main px-12 py-14 h-[630px]">
+                <div key={index} className="w-full">
+                  <div className="bg-main px-12 py-14 h-full">
                     <div className="flex justify-between">
                       <Image
                         src={item.src}

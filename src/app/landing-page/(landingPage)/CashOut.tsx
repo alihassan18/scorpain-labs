@@ -47,18 +47,18 @@ const CashOut: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white py-[65px]">
+    <div className="bg-white md:py-[65px] sm:py-[40px] py-[20px]">
       <Container size="xl">
         <Fragment>
           {data.length > 0 &&
             data.map((item, index) => {
               return (
                 <div
-                  className="flex gap-16 sticky top-[65px] bg-white"
+                  className="flex sm:flex-row flex-col gap-16 sm:mt-0 mt-16 sm:sticky static sm:top-[65px] top-0 bg-white"
                   key={index}
                 >
-                  <div className="max-w-[581px] w-full relative h-[702px] flex flex-col justify-between">
-                    <div className="h-[150px] w-full bg-custom-gradient" />
+                  <div className="max-w-[581px] w-full relative sm:h-[702px] h-auto flex flex-col justify-between">
+                    <div className="h-[150px] w-full sm:block hidden  bg-custom-gradient" />
                     <div className="">
                       <h2 className="uppercase text-4xl font-slussen font-bold leading-[36px] tracking-[0.72px] text-[#0A2540]">
                         {item.title}
@@ -67,9 +67,9 @@ const CashOut: React.FC = () => {
                         {item.description}
                       </p>
                     </div>
-                    <div className="h-[150px] font-slussen bg-custom-gradient2 w-full" />
+                    <div className="h-[150px] font-slussen sm:block hidden bg-custom-gradient2 w-full" />
                   </div>
-                  <div className="relative w-0.5 bg-[#56718D1A]/10 h-[702px]">
+                  <div className="relative sm:block hidden w-0.5 bg-[#56718D1A]/10 h-[702px]">
                     <div
                       className="absolute top-0 w-full bg-main transition-all duration-300"
                       style={{ height: `${lineHeight}px` }}
@@ -86,10 +86,6 @@ const CashOut: React.FC = () => {
                 </div>
               );
             })}
-          <p className="text-[#56718DB2]/70 text-base font-normal font-slussen leading-[20.96px] tracking-[0.34px] max-w-[852px] pt-10">
-            Note: 7 days free trial of all services. Buy 6 Months, 1 Month free.
-            Buy 12 Months, 3 Months free. If any questions, email mm@mytrade.org
-          </p>
         </Fragment>
       </Container>
     </div>

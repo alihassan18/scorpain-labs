@@ -78,7 +78,9 @@ const ProfileDropdown = ({ home }: Iprops) => {
               setIsOpen(!isOpen);
             }} // Toggle dropdown state
           >
-            <div className={`${home && "hidden"} text-base min-w-20`}>
+            <div
+              className={`${home && "hidden"} text-base min-w-20 font-slussen`}
+            >
               {/* {userData?.username} */}rfc
             </div>
             <i
@@ -104,11 +106,11 @@ const ProfileDropdown = ({ home }: Iprops) => {
                   className={clsx(
                     true ? "" : "",
                     i == 0 || i == 1 ? "text-gray" : "text-[#00000] mt-1",
-                    "px-6 py-1 text-sm leading-6  font-medium gap-3 flex items-center cursor-pointer"
+                    "px-6 py-1 text-sm leading-6  font-medium gap-3 flex items-center cursor-pointer font-slussen"
                   )}
                 >
                   <i
-                    className={`${item.icon} ${
+                    className={`font-slussen ${item.icon} ${
                       i == 0 ? "text-primary" : "text-[#00000]"
                     }`}
                   ></i>

@@ -80,7 +80,7 @@ export default function Navbar() {
 
   return (
     <ReduxProvider>
-      <nav className="bg-black-mid z-[99999]" id="feature">
+      <nav className="bg-main z-[99999]" id="feature">
         <Container className="" size="lg">
           <Transition.Root show={navbar} as={Fragment}>
             <Dialog
@@ -120,35 +120,46 @@ export default function Navbar() {
                       leaveFrom="opacity-100"
                       leaveTo="opacity-0"
                     >
-                      <div className="absolute top-0 pt-5 z-20 -right-8 px-5">
+                      <div className="absolute top-0 pt-5 z-[20000000000] -right-8 px-5">
                         <button
                           type="button"
-                          className="-m-2 p-2 flex justify-center items-center h-10 w-10 bg-white rounded-full"
+                          className="-m-2 p-2 flex justify-center font-slussen items-center h-10 w-10 z-50 relative bg-white rounded-full"
                           onClick={() => setNavbar(false)}
                         >
-                          <span className="sr-only">Close sidebar</span>
+                          <span className="sr-only font-slussen">
+                            Close sidebar
+                          </span>
                           <i className="text-base icon-close !text-black" />
                         </button>
                       </div>
                     </Transition.Child>
                     <div
-                      className={`z-[999999] h-screen fixed duration-300 ease-linear gap-10 flex flex-col justify-between w-[80vw] bg-black-mid p-8`}
+                      className={`z-[999999] h-screen fixed duration-300 ease-linear gap-10 flex flex-col justify-between w-[70vw] bg-blue-dark p-8`}
                     >
-                      <ul className="space-y-12">
-                        {Navigation?.map((item, i) => (
-                          <Link href={item.href} key={i}>
-                            <li className="text-white md:mb-0 mb-12 text-lg font-normal relative pb-2 flex gap-3 items-center border-b">
-                              <span>{item.icon}</span>
-                              {item.name}
-                            </li>
-                          </Link>
-                        ))}
-                      </ul>
+                      <div>
+                        <ImageComponent
+                          src="/assets/images/logo-new.png"
+                          fill
+                          figClassName="w-[200px] xs:w-[135px] xs:h-[35px] h-[50px]"
+                          className="object-contain rounded-full"
+                          alt=""
+                        />
+                        <ul className="space-y-12 mt-10">
+                          {Navigation?.map((item, i) => (
+                            <Link href={item.href} key={i}>
+                              <li className="text-white font-slussen md:mb-0 mb-12 text-lg font-normal relative pb-2 flex gap-3 items-center border-b">
+                                <span>{item.icon}</span>
+                                {item.name}
+                              </li>
+                            </Link>
+                          ))}
+                        </ul>
+                      </div>
                       <div className="flex gap-4 items-center">
                         {token ? (
                           <span
                             onClick={handleLogout}
-                            className="text-white font-semibold text-[17px] cursor-pointer"
+                            className="text-white font-semibold text-[17px] cursor-pointer font-slussen"
                           >
                             Logout
                           </span>
@@ -156,7 +167,7 @@ export default function Navbar() {
                           <>
                             <Link
                               href="/auth/login"
-                              className="text-white md:mb-0 mb-4 text-lg font-normal relative flex items-center gap-2"
+                              className="text-white md:mb-0 mb-4 text-lg font-normal font-slussen relative flex items-center gap-2"
                             >
                               Login
                             </Link>
@@ -172,7 +183,7 @@ export default function Navbar() {
           <div className="justify-between mx-auto md:flex md:items-center">
             <div className="flex items-center justify-center md:justify-between py-3 md:block relative">
               <button
-                className="rounded-md p-1.5 text-gray-700 outline-none focus:border focus:border-gray-400 md:hidden absolute left-0"
+                className="rounded-md p-1.5 text-blue-dark outline-none focus:border focus:border-gray-400 md:hidden absolute left-0"
                 onClick={() => setNavbar(!navbar)}
               >
                 <svg
@@ -207,7 +218,7 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href="/auth/login"
-                    className="text-white md:mb-0 mb-4 text-lg font-normal relative flex items-center gap-2"
+                    className="text-white font-slussen md:mb-0 text-lg font-normal relative flex items-center gap-2"
                   >
                     Login
                   </Link>
@@ -224,7 +235,7 @@ export default function Navbar() {
               <ul className="items-center justify-center md:gap-0 md:flex md:space-x-5 lg:space-x-10">
                 {Navigation?.map((item, i) => (
                   <Link href={item.href} key={i}>
-                    <li className="text-white hover:text-primary md:mb-0 mb-4 text-lg font-normal relative flex items-center gap-2">
+                    <li className="text-white font-slussen hover:text-primary md:mb-0 mb-4 text-lg font-normal relative flex items-center gap-2">
                       <span className="">{item.icon}</span>
                       {item.name}
                     </li>
@@ -240,7 +251,7 @@ export default function Navbar() {
                   <>
                     <Link
                       href="/auth/login"
-                      className="text-white hover:text-primary md:mb-0 mb-4 text-lg font-normal relative flex items-center gap-2"
+                      className="text-white font-slussen hover:text-primary md:mb-0 mb-4 text-lg font-normal relative flex items-center gap-2"
                     >
                       Login
                     </Link>

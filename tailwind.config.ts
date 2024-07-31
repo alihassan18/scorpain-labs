@@ -61,8 +61,9 @@ const config: Config = {
         0: "0",
       },
       backgroundImage: {
-        banner: "url('/assets/images/landing-page/banner-bg.svg')",
+        banner: "url('/assets/images/landing-page/banner-bg.png')",
         mission: "url('/assets/images/landing-page/our-middion-bg.svg')",
+        'mission-mobile ': "url('/assets/images/landing-page/liquidity-mobile.svg')",
         'custom-gradient': 'linear-gradient(to top, rgba(117, 33, 33, 0), rgba(117, 33, 33, 0.02))',
         'custom-gradient2': 'linear-gradient(to top, rgba(117, 33, 33, 0.02), rgba(117, 33, 33, 0))',
         'custom-gradient3': 'linear-gradient(to top, rgba(117, 33, 33, 0), rgba(117, 33, 33, 0.03))',

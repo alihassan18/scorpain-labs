@@ -31,11 +31,14 @@ const Prices: React.FC = () => {
           Prices
         </h2>
         <section className="flex justify-center w-full">
-          <div className="flex gap-2.5 pt-8 max-w-[926px] w-full justify-center">
+          <div className="flex sm:flex-row flex-col gap-2.5 pt-8 max-w-[926px] w-full justify-center">
             {data.length > 0 &&
               data.map((item, index) => {
                 return (
-                  <div className="bg-[#0A2540] p-[50px] w-full max-w-[458px] flex flex-col justify-between items-center">
+                  <div
+                    className="bg-[#0A2540] md:p-[50px] sm:p[30px] p-8 sm:max-w-[458px] w-full flex flex-col justify-between items-center"
+                    key={index}
+                  >
                     <div className="">
                       <span className="text-white text-2xl font-normal font-slussen leading-[31.44px] tracking-[0.34px]">
                         {item.tier}
