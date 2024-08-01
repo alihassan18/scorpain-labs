@@ -15,7 +15,7 @@ const VipServices: React.FC = () => {
         VIP Services
       </h1>
       <div className="space-y-5">
-        <div className="p-5 bg-blue-dark w-full max-w-[1200px] flex flex-col">
+        <div className="p-5 bg-[#1E3372] w-full max-w-[1200px] flex flex-col">
           <h2 className="flex text-lg text-yellow-700 font-semibold items-center font-slussen">
             Reference Price{" "}
             <div className="bg-red-dull h-max px-2 py-0.5 text-sm ml-2 text-white font-slussen flex gap-1.5 items-center">
@@ -58,7 +58,7 @@ const VipServices: React.FC = () => {
                 >
                   Place Sell Orders
                 </Button>
-                <Button className="min-w-[200px] bg-red-dark font-slussen disabled:opacity-50 text-white rounded-none  font-semibold py-3">
+                <Button className="min-w-[200px] bg-[#E93E3E] font-slussen disabled:opacity-50 text-white rounded-none  font-semibold py-3">
                   Cancel Sell Orders
                 </Button>
               </div>
@@ -66,7 +66,7 @@ const VipServices: React.FC = () => {
           </div>
         </div>
 
-        <div className="p-5 bg-blue-dark w-full max-w-[1200px] flex flex-col">
+        <div className="p-5  bg-[#1E3372]  w-full max-w-[1200px] flex flex-col">
           <h2 className="flex text-lg text-yellow-700 font-semibold items-center font-slussen">
             Price Support{" "}
             <div className="bg-green-200 h-max px-2 py-0.5 font-slussen text-sm ml-2 text-white flex gap-1.5 items-center">
@@ -99,7 +99,7 @@ const VipServices: React.FC = () => {
                 >
                   Start
                 </Button>
-                <Button className="min-w-[200px] font-slussen bg-red-dark disabled:opacity-50 text-white rounded-none font-semibold py-3">
+                <Button className="min-w-[200px] font-slussen bg-[#E93E3E] disabled:opacity-50 text-white rounded-none font-semibold py-3">
                   Stop
                 </Button>
               </div>
@@ -107,7 +107,7 @@ const VipServices: React.FC = () => {
           </div>
         </div>
 
-        <div className="p-5 bg-blue-dark w-full max-w-[1200px] flex flex-col">
+        <div className="p-5  bg-[#1E3372]    w-full max-w-[1200px] flex flex-col">
           <h2 className="flex text-lg text-yellow-700 font-semibold items-center font-slussen">
             Cash-out{" "}
             <div className="bg-green-200 h-max px-2 py-0.5 font-slussen text-sm ml-2 text-white flex gap-1.5 items-center">
@@ -184,7 +184,7 @@ const VipServices: React.FC = () => {
                 >
                   Start
                 </Button>
-                <Button className="min-w-[200px] bg-red-dark disabled:opacity-50 text-white rounded-none font-slussen font-semibold py-3">
+                <Button className="min-w-[200px] bg-[#F24848]  disabled:opacity-50 text-white rounded-none font-slussen font-semibold py-3">
                   Stop
                 </Button>
               </div>

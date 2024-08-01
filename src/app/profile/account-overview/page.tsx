@@ -79,41 +79,43 @@ const AccountOverview: React.FC = () => {
 
   return (
     <Fragment>
-      <div className="md:py-20 min-h-[100vh] py-10 bg-black-dull border-b">
+      <div className="md:py-20 min-h-[100vh] py-10 bg-[#16234B] border-b">
         <Container className="flex justify-center flex-col gap-10">
-          <div className="p-10 bg-black-400 w-full flex flex-col rounded-lg">
-            <h1 className="text-3xl textGradient font-semibold mb-3">
+          <div className="p-10 bg-[#1E3372] w-full flex flex-col rounded-lg">
+            <h1 className="text-3xl textGradient font-slussen font-semibold mb-3">
               Account Overview
             </h1>
-            <h3 className="text-xl text-white mb-10">Account Name: rfc</h3>
-            <h2 className="text-2xl text-white font-semibold mb-3">
+            <h3 className="text-xl font-slussen text-white mb-10">
+              Account Name: rfc
+            </h3>
+            <h2 className="text-2xl font-slussen text-white font-semibold mb-3">
               List of Active Exchanges
             </h2>
             <section className="w-full space-y-5">
               <Disclosure
                 as="div"
-                className=""
+                className="bg-[#31488E]"
                 style={{ borderRadius: 10 }}
                 defaultOpen={true}
               >
                 <DisclosureButton
-                  className="group flex w-full items-center justify-between p-5"
+                  className="group flex w-full items-center font-slussen justify-between p-5"
                   style={{
-                    backgroundColor: "#1e2024",
+                    backgroundColor: "#31488E",
                     borderTopRightRadius: 10,
                     borderTopLeftRadius: 10,
                   }}
                 >
-                  <span className="text-sm/6 font-medium text-white group-data-[hover]:text-white/80 flex gap-10 items-center">
-                    <span className="text-xl me-10">BITMART</span>
-                    <span className="text-sm">RFC/USDT</span>
+                  <span className="text-sm/6 font-medium text-white font-slussen group-data-[hover]:text-white/80 flex gap-10 items-center">
+                    <span className="text-xl font-slussen me-10">BITMART</span>
+                    <span className="text-sm font-slussen">RFC/USDT</span>
                   </span>
-                  <FaChevronCircleDown className="text-xl text-white group-data-[open]:rotate-180" />
+                  <FaChevronCircleDown className="text-xl font-slussen text-white group-data-[open]:rotate-180" />
                 </DisclosureButton>
                 <DisclosurePanel
-                  className="p-5 text-sm/5 text-white/50"
+                  className="p-5 font-slussen text-sm/5 text-white/50"
                   style={{
-                    backgroundColor: "#303339",
+                    backgroundColor: "#31488E",
                     borderBottomRightRadius: 10,
                     borderBottomLeftRadius: 10,
                   }}
@@ -124,25 +126,31 @@ const AccountOverview: React.FC = () => {
                         <tr className="text-normal">
                           <td>{item.name}</td>
                           <td>
-                            {item.rfc} <span className="text-white">RFC</span>
+                            {item.rfc}{" "}
+                            <span className="text-white font-slussen">RFC</span>
                           </td>
                           <td>
-                            {item.usdt} <span className="text-white">USDT</span>
+                            {item.usdt}{" "}
+                            <span className="text-white font-slussen">
+                              USDT
+                            </span>
                           </td>
                           <td>
-                            {item.mbx} <span className="text-white">BMX</span>
+                            {item.mbx}{" "}
+                            <span className="text-white font-slussen">BMX</span>
                           </td>
                           <td width={100}>
                             <Button
                               variant={"outline"}
                               color={"danger"}
                               style={{
-                                color: "#ee5757",
+                                color: "white",
                                 borderColor: "transparent",
-                                backgroundColor: "#4F393D",
+                                backgroundColor: "#E93E3E",
                                 borderRadius: 10,
                                 padding: "7px 15px",
                               }}
+                              className=" font-slussen"
                             >
                               Unbind
                             </Button>
@@ -154,11 +162,13 @@ const AccountOverview: React.FC = () => {
               </Disclosure>
             </section>
           </div>
-          <div className="p-10 bg-black-400 w-full flex flex-col rounded-lg">
-            <h1 className="text-3xl textGradient font-semibold mb-3">
+          <div className="p-10 bg-[#1E3372] w-full flex flex-col rounded-lg">
+            <h1 className="text-3xl font-slussen textGradient font-semibold mb-3">
               Expiration Date and Cost
             </h1>
-            <h2 className="text-xl text-white font-semibold mb-3">BITMART</h2>
+            <h2 className="text-xl font-slussen text-white font-semibold mb-3">
+              BITMART
+            </h2>
             <section className="w-full space-y-5">
               <Disclosure
                 as="div"
@@ -169,21 +179,23 @@ const AccountOverview: React.FC = () => {
                 <DisclosureButton
                   className="group flex w-full items-center justify-between p-5"
                   style={{
-                    backgroundColor: "#1e2024",
+                    backgroundColor: "#31488E",
                     borderTopRightRadius: 10,
                     borderTopLeftRadius: 10,
                   }}
                 >
-                  <span className="text-sm/6 font-medium text-white group-data-[hover]:text-white/80 flex gap-10 items-center">
-                    <span className="text-xl me-3">RFC/USDT</span>
-                    <span className="text-xl">Expiration Dates:</span>
+                  <span className="text-sm/6 font-slussen font-medium text-white group-data-[hover]:text-white/80 flex gap-10 items-center">
+                    <span className="text-xl font-slussen me-3">RFC/USDT</span>
+                    <span className="text-xl font-slussen">
+                      Expiration Dates:
+                    </span>
                   </span>
-                  <FaChevronCircleDown className="text-xl text-white group-data-[open]:rotate-180" />
+                  <FaChevronCircleDown className="text-xl font-slussen text-white group-data-[open]:rotate-180" />
                 </DisclosureButton>
                 <DisclosurePanel
-                  className="p-5 text-sm/5 text-white/50"
+                  className="p-5 text-sm/5 text-white/50 font-slussen"
                   style={{
-                    backgroundColor: "#303339",
+                    backgroundColor: "#31488E",
                     borderBottomRightRadius: 10,
                     borderBottomLeftRadius: 10,
                   }}
@@ -191,7 +203,7 @@ const AccountOverview: React.FC = () => {
                   <table className="w-full master-table text-lg">
                     {bitmartExpDateCost &&
                       bitmartExpDateCost.map((item: any) => (
-                        <tr className="text-normal">
+                        <tr className="text-normal font-slussen">
                           <td style={{ width: "calc(50% - 200px)" }}>
                             {item.name}
                           </td>

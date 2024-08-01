@@ -30,7 +30,7 @@ const ManualOperation: React.FC = () => {
   };
   return (
     <Fragment>
-      <div className="p-5 bg-blue-dark w-full max-w-[1200px] flex flex-col">
+      <div className="p-5  bg-[#1E3372]  w-full max-w-[1200px] flex flex-col">
         <h2 className="flex text-lg text-yellow-700 font-semibold items-center font-slussen">
           Manual Operation
         </h2>

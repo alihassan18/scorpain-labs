@@ -5,7 +5,7 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 const VolumeSupport: React.FC = () => {
   return (
     <Fragment>
-      <div className="p-5 bg-[#0A2540] w-full max-w-[1200px] flex flex-col">
+      <div className="p-5 bg-[#1E3372]  w-full max-w-[1200px] flex flex-col">
         <h2 className="flex text-lg text-yellow-700 font-semibold items-center font-slussen">
           Volume Support{" "}
           <div className="bg-green-200 h-max px-2 py-0.5 font-slussen text-sm ml-2 text-white flex gap-1.5 items-center">
@@ -43,7 +43,7 @@ const VolumeSupport: React.FC = () => {
               >
                 Start
               </Button>
-              <Button className="min-w-[200px] bg-red-dark disabled:opacity-50 rounded-none text-white font-semibold py-3 font-slussen">
+              <Button className="min-w-[200px] bg-[#E93E3E] disabled:opacity-50 rounded-none text-white font-semibold py-3 font-slussen">
                 Stop
               </Button>
             </div>

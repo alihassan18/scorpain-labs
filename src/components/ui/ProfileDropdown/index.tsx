@@ -94,7 +94,7 @@ const ProfileDropdown = ({ home }: Iprops) => {
           <MenuItems
             transition
             anchor="bottom end"
-            className="w-52 bg-black-mid origin-top-right p-1 !rounded-md text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
+            className="w-52  bg-[#4169E1] origin-top-right p-1 !rounded-md text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
           >
             {userNavigation.map((item, i) => (
               <MenuItem key={item.name}>

@@ -6,7 +6,7 @@ const LiquiditySupport: React.FC = () => {
   return (
     <Fragment>
       <div className="space-y-5">
-        <div className="p-5 bg-blue-dark w-full max-w-[1200px] flex flex-col">
+        <div className="p-5  bg-[#1E3372] w-full max-w-[1200px] flex flex-col">
           <h2 className="flex text-lg text-yellow-700 font-semibold items-center font-slussen">
             Liquidity Support{" "}
             <div className="bg-green-200 h-max px-2 py-0.5 font-slussen text-sm ml-2 text-white flex gap-1.5 items-center">
@@ -45,7 +45,7 @@ const LiquiditySupport: React.FC = () => {
                 >
                   Place Sell Orders
                 </Button>
-                <Button className="min-w-[250px] bg-red-dark disabled:opacity-50 text-white rounded-none  font-semibold py-3 font-slussen">
+                <Button className="min-w-[250px] bg-[#E93E3E]  disabled:opacity-50 text-white rounded-none  font-semibold py-3 font-slussen">
                   Cancel Sell Orders
                 </Button>
               </div>
@@ -83,7 +83,7 @@ const LiquiditySupport: React.FC = () => {
                 >
                   Place Sell Orders
                 </Button>
-                <Button className="min-w-[250px] bg-red-dark disabled:opacity-50 text-white rounded-none  font-semibold py-3 font-slussen">
+                <Button className="min-w-[250px] bg-[#E93E3E]  disabled:opacity-50 text-white rounded-none  font-semibold py-3 font-slussen">
                   Cancel Buy Orders
                 </Button>
               </div>
@@ -109,7 +109,7 @@ const LiquiditySupport: React.FC = () => {
                 >
                   Start
                 </Button>
-                <Button className="min-w-[250px] bg-red-dark disabled:opacity-50 text-white rounded-none font-slussen font-semibold py-3">
+                <Button className="min-w-[250px] bg-[#E93E3E]  disabled:opacity-50 text-white rounded-none font-slussen font-semibold py-3">
                   Stop
                 </Button>
               </div>

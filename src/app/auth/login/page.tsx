@@ -81,12 +81,12 @@ const Login = () => {
 
   return (
     <>
-      <div className="md:py-20 py-10 bg-main relative">
+      <div className="md:py-20 py-5 bg-main relative">
         <Container
           size="xl"
           className="grid md:grid-cols-2 grid-cols-1 items-center gap-10"
         >
-          <div className="">
+          <div className="sm:block hidden">
             <Image
               src="/assets/images/login/login-banner.svg"
               alt="login banner"
@@ -94,7 +94,7 @@ const Login = () => {
               width={630}
             />
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center sm:px-0 sm:py-0 py-10 px-4">
             <form
               onSubmit={handleSubmit(onSubmit)}
               className="w-full sm:w-[409px] shadow-arround relative rounded-lg"
@@ -102,11 +102,11 @@ const Login = () => {
               <h2 className="font-bold text-white text-[28px] leading-[36.68px] font-slussen">
                 Login
               </h2>
-              <p className="font-slussen text-xl font-normal leading-[26.2px] tracking-[0.34px] text-[#F6F9FCE5]/90">
+              <p className="font-slussen sm:text-xl text-base sm:mt-0 mt-4   font-normal leading-[26.2px] tracking-[0.34px] text-[#F6F9FCE5]/90">
                 See what is going on with your business
               </p>
               <div
-                className="xs:shadow-xl xs:bg-white xs:rounded-[20px] mt-8 xs:p-6"
+                className="xs:shadow-xl  xs:rounded-[20px] mt-8 xs:p-6"
                 data-aos="fade-up"
               >
                 <div className="spae-y-1">
