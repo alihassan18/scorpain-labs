@@ -27,7 +27,6 @@ const StatusSection: React.FC = () => {
     AOS.init();
     AOS.refresh();
   }, []);
-
   return (
     <Fragment>
       <div className="bg-[#16234B] py-[65px]">

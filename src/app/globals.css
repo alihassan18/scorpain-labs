@@ -690,6 +690,8 @@ input[type="number"] {
 }
 
 @keyframes move {
+
+   
   10%{
     height: 100%;
     width: 100%;
@@ -716,4 +718,5 @@ input[type="number"] {
     width: 100%;
     opacity: 1;
   }
+  
 }
