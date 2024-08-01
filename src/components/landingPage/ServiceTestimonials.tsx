@@ -29,7 +29,7 @@ const data = [
 
 const ServiceTestimonials: React.FC = () => {
   return (
-    <div className="bg-main bg-opacity-[2%] py-[65px]">
+    <div className="bg-main bg-opacity-[2%] py-[65px]" id="testimonial">
       <Container size="xl">
         <h2 className="text-[#0A2540] md:text-5xl sm:text-4xl text-2xl font-bold font-slussen leading-[48px] tracking-[0.96px]">
           Testimonials

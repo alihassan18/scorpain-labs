@@ -17,7 +17,7 @@ const Navigation = [
   {
     name: "Features & Pricing",
     icon: <MdCloudQueue />,
-    href: "/",
+    href: "#price",
   },
 ];
 

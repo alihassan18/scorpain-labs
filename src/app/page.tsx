@@ -6,17 +6,18 @@
 //   ApplyMyTrade,
 //   BasicServices,
 // } from "./home/index";
-import Apply from "./landing-page/(landingPage)/Apply";
-import Banner from "./landing-page/(landingPage)/Banner";
-import CashOut from "./landing-page/(landingPage)/CashOut";
-import Faq from "./landing-page/(landingPage)/Faq";
-import OurMission from "./landing-page/(landingPage)/OurMission";
-import PartnerExchange from "./landing-page/(landingPage)/PartnerExchange";
-import Prices from "./landing-page/(landingPage)/Prices";
-import Services from "./landing-page/(landingPage)/Services";
-import ServiceTestimonials from "./landing-page/(landingPage)/ServiceTestimonials";
-import StatusSection from "./landing-page/(landingPage)/StatusSection";
-import TradeView from "./landing-page/(landingPage)/TradeView";
+import LandingFooter from "@/components/ui/LandingFooter";
+import Apply from "../components/landingPage/Apply";
+import Banner from "../components/landingPage/Banner";
+import CashOut from "../components/landingPage/CashOut";
+import Faq from "../components/landingPage/Faq";
+import OurMission from "../components/landingPage/OurMission";
+import PartnerExchange from "../components/landingPage/PartnerExchange";
+import Prices from "../components/landingPage/Prices";
+import Services from "../components/landingPage/Services";
+import ServiceTestimonials from "../components/landingPage/ServiceTestimonials";
+import StatusSection from "../components/landingPage/StatusSection";
+import TradeView from "../components/landingPage/TradeView";
 
 export default function Home() {
   return (
@@ -62,6 +63,7 @@ export default function Home() {
         <ServiceTestimonials />
         <Apply />
         <Faq />
+        <LandingFooter />
         {/* <Banner />
         <BasicServices />
         <VipServices />

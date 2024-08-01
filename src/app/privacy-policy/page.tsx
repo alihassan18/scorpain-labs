@@ -5,7 +5,6 @@ import Policies from "./Policies";
 const page = () => {
   return (
     <>
-      <Baner />
       <Policies />
     </>
   );

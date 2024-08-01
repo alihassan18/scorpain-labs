@@ -5,7 +5,6 @@ import Terms from "./Terms";
 const page = () => {
   return (
     <>
-      <Baner />
       <Terms />
     </>
   );

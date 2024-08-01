@@ -5,7 +5,7 @@ import { BsArrowUpRight } from "react-icons/bs";
 const Apply = () => {
   return (
     <>
-      <div className="sm:py-[60px] py-[30px]">
+      <div className="sm:py-[60px] py-[30px]" id="apply">
         <Container size="xl" className="flex justify-center">
           <div className="w-full max-w-[633.12px]">
             <h2 className="sm:text-[28px] text-2xl font-bold font-slussen text-center">

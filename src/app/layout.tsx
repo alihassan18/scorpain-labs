@@ -6,7 +6,7 @@ import "./icomoon.css";
 import "aos/dist/aos.css";
 import "mapbox-gl/dist/mapbox-gl.css";
 import AppProvider from "@/providers/AppProvider";
-import { Footer, Header } from "@/components/ui";
+import { Header } from "@/components/ui";
 import { usePathname } from "next/navigation";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -14,6 +14,7 @@ import AuthContext from "@/context/AuthContext";
 import AuthProvider from "@/context/AuthContext";
 import { ReactQueryProvider } from "@/providers/reactQueryProvider";
 import { Inter } from "next/font/google";
+import Footer from "@/components/ui/Footer";
 
 const Slussen = localFont({
   src: [
@@ -117,22 +118,13 @@ export default function RootLayout({
       >
         <AppProvider>
           <ReactQueryProvider>
-            {/* {pathname.includes("app") || pathname.includes("auth") ? (
-              ""
-            ) : (
-              <Header />
-            )} */}
-            {pathname.includes("landing-page") ? null : <Header />}
+            <Header />
             <main id="main-inn" style={{ height: "calc(100vh - 138px)" }}>
               {children}
-              <Footer />
+
+              {pathname === "/" ? null : <Footer />}
             </main>
-            {/* <Footer /> */}
-            {/* {pathname.includes("app") || pathname.includes("auth") ? (
-              ""
-            ) : (
-              <Footer />
-            )} */}
+
             <ToastContainer position="top-center" autoClose={2000} />
           </ReactQueryProvider>
         </AppProvider>

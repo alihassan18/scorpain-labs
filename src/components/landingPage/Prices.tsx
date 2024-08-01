@@ -25,7 +25,7 @@ const data = [
 
 const Prices: React.FC = () => {
   return (
-    <div className="bg-main py-[65px]">
+    <div className="bg-main py-[65px]" id="price">
       <Container size="xl">
         <h2 className="text-center uppercase text-white font-bold text-5xl leading-[48px] tracking-[0.96px] font-slussen">
           Prices
