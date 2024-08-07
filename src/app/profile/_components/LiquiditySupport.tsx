@@ -13,10 +13,10 @@ const LiquiditySupport: React.FC = () => {
               <span className="p-1 rounded-full bg-white"></span>Live
             </div>
           </h2>
-          <div className="mt-5 bg-main p-4">
+          <div className="mt-5  bg-[#31488E] p-4">
             <div className="flex lg:items-center lg:flex-row flex-col lg:justify-between items-start w-full gap-8">
               <div className="w-full space-y-5">
-                <h6 className="font-medium text-white/80 text-sm font-slussen">
+                <h6 className="font-medium text-white/80  leading-[30px] md:leading-0 text-sm font-slussen">
                   Sell Orders (Distance to Market Price){" "}
                   <span className="cursor-not-allowed px-5 py-1 mx-1 bg-blue-dark  text-white/80 font-slussen">
                     0.5%
@@ -27,7 +27,7 @@ const LiquiditySupport: React.FC = () => {
                   </span>{" "}
                   %
                 </h6>
-                <h6 className="font-medium text-white/80 text-sm flex items-center font-slussen">
+                <h6 className="font-medium text-white/80 text-sm flex flex-wrap items-center font-slussen">
                   # of Positions{" "}
                   <span className="cursor-pointer flex items-center gap-5 px-2.5 py-1 mx-1 bg-blue-dark  text-white/80 font-slussen">
                     20 <MdOutlineKeyboardArrowDown />
@@ -38,7 +38,7 @@ const LiquiditySupport: React.FC = () => {
                   </span>
                 </h6>
               </div>
-              <div className="flex gap-5">
+              <div className="flex flex-wrap md:flex-nowrap gap-5">
                 <Button
                   className="min-w-[250px] bg-yellow-700 disabled:opacity-50 text-white rounded-none  font-semibold py-3 font-slussen"
                   disabled
@@ -51,10 +51,10 @@ const LiquiditySupport: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="mt-5 bg-main p-4">
+          <div className="mt-5  bg-[#31488E] p-4">
             <div className="flex lg:items-center lg:flex-row flex-col lg:justify-between items-start w-full gap-8">
               <div className="w-full space-y-5">
-                <h6 className="font-medium text-white/80 text-sm font-slussen">
+                <h6 className="font-medium text-white/80   leading-[30px] md:leading-0 text-sm font-slussen">
                   Buy Orders (Distance to Market Price){" "}
                   <span className="cursor-not-allowed px-5 py-1 mx-1 bg-blue-dark  text-white/80 font-slussen">
                     0.5%
@@ -65,7 +65,7 @@ const LiquiditySupport: React.FC = () => {
                   </span>{" "}
                   %
                 </h6>
-                <h6 className="font-medium text-white/80 text-sm flex items-center font-slussen">
+                <h6 className="font-medium text-white/80 text-sm flex flex-wrap items-center font-slussen">
                   # of Positions{" "}
                   <span className="cursor-pointer flex items-center gap-5 px-2.5 py-1 mx-1 bg-blue-dark  text-white/80 font-slussen">
                     20 <MdOutlineKeyboardArrowDown />
@@ -76,7 +76,7 @@ const LiquiditySupport: React.FC = () => {
                   </span>
                 </h6>
               </div>
-              <div className="flex gap-5">
+              <div className="flex flex-wrap md:flex-nowrap gap-5">
                 <Button
                   className="min-w-[250px] bg-yellow-700 disabled:opacity-50 text-white rounded-none  font-semibold py-3 font-slussen"
                   disabled
@@ -89,10 +89,10 @@ const LiquiditySupport: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="mt-5 bg-main p-4">
+          <div className="mt-5  bg-[#31488E] p-4">
             <div className="flex lg:items-center lg:flex-row flex-col lg:justify-between items-start w-full gap-8">
               <div className="w-full">
-                <h6 className="font-medium text-white/80 text-sm font-slussen">
+                <h6 className="font-medium text-white/80  leading-[30px] md:leading-0 text-sm font-slussen">
                   System will send notification when USDT changes more than{" "}
                   <span className="cursor-not-allowed px-5 py-1 mx-1 bg-blue-dark font-slussen text-white/80">
                     200
@@ -102,7 +102,7 @@ const LiquiditySupport: React.FC = () => {
                   Note: System will notify in 5 minute intervals.
                 </p>
               </div>
-              <div className="flex gap-5">
+              <div className="flex flex-wrap md:flex-nowrap gap-5">
                 <Button
                   className="min-w-[250px] bg-yellow-700 disabled:opacity-50 text-white rounded-none font-slussen font-semibold py-3"
                   disabled

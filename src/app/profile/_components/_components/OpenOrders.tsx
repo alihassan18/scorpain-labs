@@ -21,7 +21,7 @@ const OpenOrders: React.FC = () => {
   const headerClass = ""; // Custom class for header row
   return (
     <Fragment>
-      <div className="overflow-auto">
+      <div className="overflow-auto  bg-[#31488E]">
         <Table
           data={tableData}
           headingClass={headingClass}

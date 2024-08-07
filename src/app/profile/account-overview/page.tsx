@@ -88,13 +88,13 @@ const AccountOverview: React.FC = () => {
             <h3 className="text-xl font-slussen text-white mb-10">
               Account Name: rfc
             </h3>
-            <h2 className="text-2xl font-slussen text-white font-semibold mb-3">
+            <h2 className="md:text-2xl text-xl font-slussen text-white font-semibold mb-3">
               List of Active Exchanges
             </h2>
-            <section className="w-full space-y-5">
+            <section className="w-full  space-y-5">
               <Disclosure
                 as="div"
-                className="bg-[#31488E]"
+                className="bg-[#31488E]  w-full overflow-auto"
                 style={{ borderRadius: 10 }}
                 defaultOpen={true}
               >
@@ -107,7 +107,9 @@ const AccountOverview: React.FC = () => {
                   }}
                 >
                   <span className="text-sm/6 font-medium text-white font-slussen group-data-[hover]:text-white/80 flex gap-10 items-center">
-                    <span className="text-xl font-slussen me-10">BITMART</span>
+                    <span className="md:text-xl px-6 text-sm font-slussen me-10">
+                      BITMART
+                    </span>
                     <span className="text-sm font-slussen">RFC/USDT</span>
                   </span>
                   <FaChevronCircleDown className="text-xl font-slussen text-white group-data-[open]:rotate-180" />
@@ -120,40 +122,61 @@ const AccountOverview: React.FC = () => {
                     borderBottomLeftRadius: 10,
                   }}
                 >
-                  <table className="w-full master-table text-lg">
+                  <table className="w-full master-table  md:text-lg text-sm">
                     {activeExchangeData &&
                       activeExchangeData.map((item: any) => (
-                        <tr className="text-normal">
-                          <td>{item.name}</td>
+                        <tr className="text-normal !ml-10">
                           <td>
-                            {item.rfc}{" "}
-                            <span className="text-white font-slussen">RFC</span>
+                            {" "}
+                            <div className="px-6 whitespace-nowrap">
+                              {item.name}
+                            </div>
                           </td>
                           <td>
-                            {item.usdt}{" "}
-                            <span className="text-white font-slussen">
-                              USDT
-                            </span>
+                            {" "}
+                            <div className="px-6 whitespace-nowrap">
+                              {item.rfc}{" "}
+                              <span className="text-white font-slussen">
+                                RFC
+                              </span>
+                            </div>
                           </td>
                           <td>
-                            {item.mbx}{" "}
-                            <span className="text-white font-slussen">BMX</span>
+                            {" "}
+                            <div className="px-6 whitespace-nowrap">
+                              {item.usdt}{" "}
+                              <span className="text-white font-slussen">
+                                USDT
+                              </span>
+                            </div>
+                          </td>
+                          <td>
+                            {" "}
+                            <div className="px-6 whitespace-nowrap">
+                              {item.mbx}{" "}
+                              <span className="text-white font-slussen">
+                                BMX
+                              </span>
+                            </div>
                           </td>
                           <td width={100}>
-                            <Button
-                              variant={"outline"}
-                              color={"danger"}
-                              style={{
-                                color: "white",
-                                borderColor: "transparent",
-                                backgroundColor: "#E93E3E",
-                                borderRadius: 10,
-                                padding: "7px 15px",
-                              }}
-                              className=" font-slussen"
-                            >
-                              Unbind
-                            </Button>
+                            {" "}
+                            <div className="px-6 whitespace-nowrap">
+                              <Button
+                                variant={"outline"}
+                                color={"danger"}
+                                style={{
+                                  color: "white",
+                                  borderColor: "transparent",
+                                  backgroundColor: "#E93E3E",
+                                  borderRadius: 10,
+                                  padding: "7px 15px",
+                                }}
+                                className=" font-slussen"
+                              >
+                                Unbind
+                              </Button>
+                            </div>
                           </td>
                         </tr>
                       ))}
@@ -169,10 +192,10 @@ const AccountOverview: React.FC = () => {
             <h2 className="text-xl font-slussen text-white font-semibold mb-3">
               BITMART
             </h2>
-            <section className="w-full space-y-5">
+            <section className="w-full  space-y-5">
               <Disclosure
                 as="div"
-                className=""
+                className="  overflow-auto  bg-[#31488E]"
                 style={{ borderRadius: 10 }}
                 defaultOpen={true}
               >
@@ -185,35 +208,50 @@ const AccountOverview: React.FC = () => {
                   }}
                 >
                   <span className="text-sm/6 font-slussen font-medium text-white group-data-[hover]:text-white/80 flex gap-10 items-center">
-                    <span className="text-xl font-slussen me-3">RFC/USDT</span>
-                    <span className="text-xl font-slussen">
+                    <span className="md:text-xl text-sm font-slussen me-3 px-6">
+                      RFC/USDT
+                    </span>
+                    <span className="md:text-xl text-sm flex font-slussen px-6 whitespace-nowrap">
                       Expiration Dates:
                     </span>
                   </span>
-                  <FaChevronCircleDown className="text-xl font-slussen text-white group-data-[open]:rotate-180" />
+                  <FaChevronCircleDown className="text-xl font-slussen text-white group-data-[open]:rotate-180" />{" "}
                 </DisclosureButton>
                 <DisclosurePanel
-                  className="p-5 text-sm/5 text-white/50 font-slussen"
+                  className="p-5 text-sm/5 text-white/50  w-full font-slussen"
                   style={{
-                    backgroundColor: "#31488E",
+                    backgroundColor: "",
                     borderBottomRightRadius: 10,
                     borderBottomLeftRadius: 10,
                   }}
                 >
-                  <table className="w-full master-table text-lg">
+                  <table className="w-full master-table md:text-lg text-sm">
                     {bitmartExpDateCost &&
                       bitmartExpDateCost.map((item: any) => (
                         <tr className="text-normal font-slussen">
                           <td style={{ width: "calc(50% - 200px)" }}>
-                            {item.name}
+                            <div className="px-6 whitespace-nowrap">
+                              {item.name}
+                            </div>
                           </td>
-                          <td style={{ width: "50%" }}>{item.remain}</td>
+                          <td style={{ width: "50%" }}>
+                            <div className="px-6 whitespace-nowrap">
+                              {item.remain}
+                            </div>
+                          </td>
                           <td width={200} style={{ textAlign: "right" }}>
-                            <span className="text-white">{item.usdt}</span>{" "}
-                            USDT/
-                            <span style={{ textTransform: "capitalize" }}>
-                              {item.term}
-                            </span>{" "}
+                            {" "}
+                            <div className="px-6 whitespace-nowrap">
+                              <span className="text-white">{item.usdt}</span>{" "}
+                              USDT/
+                              <span
+                                style={{
+                                  textTransform: "capitalize",
+                                }}
+                              >
+                                {item.term}
+                              </span>{" "}
+                            </div>
                           </td>
                         </tr>
                       ))}

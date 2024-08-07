@@ -19,12 +19,12 @@ const API: React.FC = () => {
     <Fragment>
       <div className=" bg-[#16234B] min-h-[100vh] md:py-20 py-10">
         <Container className="flex justify-center">
-          <div className="p-10  bg-[#1E3372] w-full max-w-[800px] flex flex-col items-center rounded-lg">
+          <div className="sm:p-10 px-4 py-10  bg-[#1E3372] w-full max-w-[800px] flex flex-col items-center rounded-lg">
             <h1 className="text-4xl font-slussen textGradient font-semibold mb-12">
               Bind API
             </h1>
             <section className="space-y-5 w-full">
-              <div className="grid grid-cols-4 w-full items-center">
+              <div className="grid md:grid-cols-4 w-full gap-3 items-center">
                 <p className="text-white font-slussen text-base">Exchange:</p>
                 <div className="col-span-3">
                   <SelectComponent
@@ -36,7 +36,7 @@ const API: React.FC = () => {
                   />
                 </div>
               </div>
-              <div className="grid grid-cols-4 w-full items-center">
+              <div className="grid md:grid-cols-4 gap-3 w-full items-center">
                 <p className="text-white font-slussen text-base">API KEY:</p>
                 <div className="col-span-3">
                   <Input
@@ -46,7 +46,7 @@ const API: React.FC = () => {
                   />
                 </div>
               </div>
-              <div className="grid grid-cols-4 w-full items-center">
+              <div className="grid md:grid-cols-4 gap-3 w-full items-center">
                 <p className="text-white font-slussen text-base">SECRET KEY:</p>
                 <div className="col-span-3">
                   <Input
@@ -56,7 +56,7 @@ const API: React.FC = () => {
                   />
                 </div>
               </div>
-              <div className="grid grid-cols-4 w-full items-center">
+              <div className="grid md:grid-cols-4 gap-3 w-full items-center">
                 <p className="text-white font-slussen text-base">
                   Purpose of this account:
                 </p>

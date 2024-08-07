@@ -22,7 +22,7 @@ const VipServices: React.FC = () => {
               <span className="p-1 rounded-full bg-white"></span>Stopped
             </div>
           </h2>
-          <div className="mt-5 bg-main p-4">
+          <div className="mt-5  bg-[#31488E] p-4">
             <div className="flex lg:items-center lg:flex-row flex-col lg:justify-between items-start w-full gap-8">
               <div className="w-full space-y-4">
                 <p className="text-sm text-white/80 font-slussen">
@@ -51,7 +51,7 @@ const VipServices: React.FC = () => {
                   live.
                 </p>
               </div>
-              <div className="flex gap-5">
+              <div className="flex flex-wrap md:flex-nowrap gap-5">
                 <Button
                   className="min-w-[200px] bg-yellow-700 font-slussen disabled:opacity-50 text-white rounded-none font-semibold py-3"
                   disabled
@@ -73,7 +73,7 @@ const VipServices: React.FC = () => {
               <span className="p-1 rounded-full bg-white"></span>Live
             </div>
           </h2>
-          <div className="mt-5 bg-main p-4">
+          <div className="mt-5  bg-[#31488E] p-4">
             <div className="flex lg:items-center lg:flex-row flex-col lg:justify-between items-start w-full gap-8">
               <div className="w-full space-y-4">
                 <h6 className="font-medium text-white/80 text-sm flex items-center font-slussen">
@@ -92,7 +92,7 @@ const VipServices: React.FC = () => {
                   set price for price support.
                 </p>
               </div>
-              <div className="flex gap-5">
+              <div className="flex flex-wrap md:flex-nowrap gap-5">
                 <Button
                   className="min-w-[200px] font-slussen bg-yellow-700 disabled:opacity-50 text-white rounded-none font-semibold py-3"
                   disabled
@@ -114,7 +114,7 @@ const VipServices: React.FC = () => {
               <span className="p-1 rounded-full bg-white"></span>Live
             </div>
           </h2>
-          <div className="mt-5 bg-main p-4">
+          <div className="mt-5  bg-[#31488E] p-4">
             <div className="flex lg:items-center lg:flex-row flex-col lg:justify-between items-start w-full gap-8">
               <div className="w-full space-y-4">
                 <h6 className="font-medium text-white/80 text-sm flex items-center font-slussen">
@@ -124,7 +124,7 @@ const VipServices: React.FC = () => {
                   </span>{" "}
                   RFC/USDT
                 </h6>
-                <div className="flex gap-8 w-full max-w-[400px]">
+                <div className="flex flex-wrap gap-8 w-full max-w-[400px]">
                   <CheckBox
                     label={
                       <div className="flex items-center gap-3 relative">
@@ -177,7 +177,7 @@ const VipServices: React.FC = () => {
                   USD
                 </h6>
               </div>
-              <div className="flex gap-5">
+              <div className="flex flex-wrap md:flex-nowrap gap-5">
                 <Button
                   className="min-w-[200px] bg-yellow-700 disabled:opacity-50 text-white rounded-none font-slussen font-semibold py-3"
                   disabled

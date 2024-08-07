@@ -35,7 +35,7 @@ const ManualOperation: React.FC = () => {
           Manual Operation
         </h2>
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-5">
-          <div className="mt-5 bg-main p-4">
+          <div className="mt-5  bg-[#31488E] p-4">
             <p className="text-white text-base font-slussen">
               Available: 4,707.505 USDT
             </p>
@@ -93,7 +93,7 @@ const ManualOperation: React.FC = () => {
               </Button>
             </section>
           </div>
-          <div className="mt-5 bg-main p-4">
+          <div className="mt-5  bg-[#31488E] p-4">
             <p className="text-white text-base font-slussen">
               Available: 283,420 RFC
             </p>
