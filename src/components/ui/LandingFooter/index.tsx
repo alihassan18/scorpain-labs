@@ -18,10 +18,10 @@ const LandingFooter = () => {
     <div className="bg-[url('/assets/images/landing-page/footerimg.svg')] bg-cover p-1 pb-12">
       <Container size="xl">
         <div className="sm:mt-[140px] mt-[60px]">
-          <h2 className="max-w-[464.18px] tracking-[0.96px] leading-[48px] text-white text-5xl font-slussen font-bold">
+          <h2 className="max-w-[464.18px] tracking-[0.96px] leading-[48px] text-white md:text-5xl text-2xl font-slussen font-bold">
             Work only with the best
           </h2>
-          <p className="text-2xl font-slussen leading-[38.4px] font-normal sm:mt-16 mt-10 text-white max-w-[854px]">
+          <p className="md:text-2xl text-base font-slussen leading-[38.4px] font-normal sm:mt-16 mt-10 text-white max-w-[854px]">
             Scopian Labs is a trusted advisor and crypto market maker for
             digital asset issuers. Backed by decades of combined expertise from
             premier financial institutions, we offer institutional-grade

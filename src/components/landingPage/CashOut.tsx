@@ -60,10 +60,10 @@ const CashOut: React.FC = () => {
                   <div className="max-w-[581px] w-full relative sm:h-[702px] h-auto flex flex-col justify-between">
                     <div className="h-[150px] w-full sm:block hidden  bg-custom-gradient" />
                     <div className="">
-                      <h2 className="uppercase text-4xl font-slussen font-bold leading-[36px] tracking-[0.72px] text-[#0A2540]">
+                      <h2 className="uppercase md:text-4xl text-2xl font-slussen font-bold leading-[36px] tracking-[0.72px] text-[#0A2540]">
                         {item.title}
                       </h2>
-                      <p className="text-[#56718DE5]/90 font-slussen text-2xl leading-[38.4px] tracking-[0.34px] font-normal pt-6 max-w-[505px]">
+                      <p className="text-[#56718DE5]/90 font-slussen md:text-2xl text-base leading-[38.4px] tracking-[0.34px] font-normal pt-6 max-w-[505px]">
                         {item.description}
                       </p>
                     </div>

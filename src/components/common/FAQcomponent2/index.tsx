@@ -58,7 +58,7 @@ const FaqComponent2: React.FC = () => {
                   isOpen && "rounded-t-md !rounded-b-none"
                 }`}
               >
-                <h5 className="font-normal font-slussen sm:text-xl text-xl  text-[#0A2540]">
+                <h5 className="font-normal font-slussen mdtext-xl text-sm  text-[#0A2540]">
                   {question}
                 </h5>
 
@@ -80,7 +80,7 @@ const FaqComponent2: React.FC = () => {
                     : { maxHeight: 0 }
                 }
               >
-                <div className="font-normal text-xl bg-white text-[#0A2540] p-8 ">
+                <div className="font-normal md:text-xl text-sm bg-white text-[#0A2540] p-8 ">
                   <div dangerouslySetInnerHTML={{ __html: ans }} />
                 </div>
               </div>

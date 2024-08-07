@@ -27,7 +27,7 @@ const Prices: React.FC = () => {
   return (
     <div className="bg-main py-[65px]" id="price">
       <Container size="xl">
-        <h2 className="text-center uppercase text-white font-bold text-5xl leading-[48px] tracking-[0.96px] font-slussen">
+        <h2 className="md:text-center uppercase text-white font-bold md:text-5xl text-2xl leading-[48px] tracking-[0.96px] font-slussen">
           Prices
         </h2>
         <section className="flex justify-center w-full">

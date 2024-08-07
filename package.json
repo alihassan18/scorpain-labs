@@ -3,12 +3,12 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "cp .env.prod .env && next dev",
-        "build:dev": "cp .env.dev .env && next build",
-        "build": "cp .env.prod .env && next build",
-        "dev:win": "cp .env.dev .env && next dev",
-        "build:dev:win": "cp .env.dev .env && next build",
-        "build:win": "cp .env.prod .env && next build",
+        "dev": "copy .env.prod .env && next dev",
+        "build:dev": "copy .env.dev .env && next build",
+        "build": "copy .env.prod .env && next build",
+        "dev:win": "copy .env.dev .env && next dev",
+        "build:dev:win": "copy .env.dev .env && next build",
+        "build:win": "copy .env.prod .env && next build",
         "start": "next start",
         "lint": "next lint"
     },

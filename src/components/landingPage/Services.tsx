@@ -34,10 +34,10 @@ const Services: React.FC = () => {
   return (
     <div className="bg-main bg-opacity-[2%] md:py-[50px] py-8">
       <Container size="xl">
-        <h2 className="text-[#0A2540] text-5xl font-bold font-slussen leading-[48px] tracking-[0.96px]">
+        <h2 className="text-[#0A2540] md:text-5xl text-2xl font-bold font-slussen leading-[48px] tracking-[0.96px]">
           Services
         </h2>
-        <p className="max-w-[992px] text-2xl font-normal font-slussen leading-[38.4px] tracking-[0.34px] text-[#56718D] pt-2">
+        <p className="max-w-[992px] md:text-2xl text-base font-normal font-slussen leading-[38.4px] tracking-[0.34px] text-[#56718D] pt-2">
           Scorpian Labs offers comprehensive solutions for digital asset issuers
           at all stages.
         </p>
