@@ -8,11 +8,14 @@ const logger = winston.createLogger({
   format: winston.format.json(),
   transports: [new winston.transports.Console()],
 });
-
 const connectDB = async () => {
   if (mongoose.connections[0].readyState) return;
   try {
-    await mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://alihassan:OixJwDgll81R1UM1@cluster0.wapv0.mongodb.net/scorpion_lab");
+    // connect server
+    await mongoose.connect(
+      process.env.MONGODB_URI ||
+        "mongodb+srv://alihassan:OixJwDgll81R1UM1@cluster0.wapv0.mongodb.net/scorpion_lab"
+    );
   } catch (error) {
     logger.error("Failed to connect to MongoDB", error);
     throw new Error("Database connection error");
