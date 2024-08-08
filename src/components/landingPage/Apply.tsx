@@ -83,10 +83,10 @@ const Apply = () => {
                   placeholder="Please Enter"
                   className="w-full pl-44 py-6 placeholder:text-base border border-[#56718D80]/50 placeholder:font-slussen placeholder:font-normal"
                 />
-                {errors.projectName && (
-                  <p className="text-red-500">{errors.projectName.message}</p>
-                )}
               </div>
+              {errors.projectName && (
+                <p className="text-red-500">{errors.projectName.message}</p>
+              )}
 
               <div className="relative">
                 <label
@@ -102,10 +102,10 @@ const Apply = () => {
                   placeholder="Please Enter"
                   className="w-full pl-44 py-6 placeholder:text-base border border-[#56718D80]/50 placeholder:font-slussen placeholder:font-normal"
                 />
-                {errors.website && (
-                  <p className="text-red-500">{errors.website.message}</p>
-                )}
               </div>
+              {errors.website && (
+                <p className="text-red-500">{errors.website.message}</p>
+              )}
 
               <div className="relative">
                 <label
@@ -121,10 +121,10 @@ const Apply = () => {
                   placeholder="Please Enter"
                   className="w-full pl-44 py-6 placeholder:text-base border border-[#56718D80]/50 placeholder:font-slussen placeholder:font-normal"
                 />
-                {errors.companyName && (
-                  <p className="text-red-500">{errors.companyName.message}</p>
-                )}
               </div>
+              {errors.companyName && (
+                <p className="text-red-500">{errors.companyName.message}</p>
+              )}
 
               <div className="relative">
                 <label
@@ -140,20 +140,18 @@ const Apply = () => {
                   placeholder="Please Enter"
                   className="w-full pl-44 py-6 placeholder:text-base border border-[#56718D80]/50 placeholder:font-slussen placeholder:font-normal"
                 />
-                {errors.telegram && (
-                  <p className="text-red-500">{errors.telegram.message}</p>
-                )}
               </div>
+              {errors.telegram && (
+                <p className="text-red-500">{errors.telegram.message}</p>
+              )}
 
               <Button
                 type="submit"
+                disabled={loading}
                 className="bg-secondary !w-full mt-12 font-slussen font-normal whitespace-nowrap !text-2xl tracking-[0.34px] !text-black-100 flex items-center !py-2 !px-6 rounded-none gap-8"
               >
                 {loading ? (
-                  <span className="flex items-center">
-                    {/* <BsSpinner className="animate-spin text-sm mr-2" /> */}
-                    Loading...
-                  </span>
+                  <span className="flex items-center">Loading...</span>
                 ) : (
                   <>
                     Get Started Today <BsArrowUpRight className="text-sm" />

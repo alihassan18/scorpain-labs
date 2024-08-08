@@ -80,7 +80,7 @@ const FaqComponent2: React.FC = () => {
                     : { maxHeight: 0 }
                 }
               >
-                <div className="font-normal md:text-xl text-sm bg-white text-[#0A2540] p-8 ">
+                <div className="font-normal md:text-xl text-sm bg-white text-[#0A2540] px-8 !pb-8">
                   <div dangerouslySetInnerHTML={{ __html: ans }} />
                 </div>
               </div>
