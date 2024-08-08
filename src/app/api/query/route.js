@@ -1,19 +1,20 @@
 import mongoose from "mongoose";
 import QueryForm from "../../../models/querysModel";
 import { NextResponse } from "next/server";
+import winston from "winston";
+
+const logger = winston.createLogger({
+  level: "error",
+  format: winston.format.json(),
+  transports: [new winston.transports.Console()],
+});
 
 const connectDB = async () => {
   if (mongoose.connections[0].readyState) return;
   try {
-    await mongoose.connect(
-      "mongodb+srv://alihassan:OixJwDgll81R1UM1@cluster0.wapv0.mongodb.net/scorpion_lab",
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
-    );
+    await mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://alihassan:OixJwDgll81R1UM1@cluster0.wapv0.mongodb.net/scorpion_lab");
   } catch (error) {
-    console.error("Failed to connect to MongoDB", error);
+    logger.error("Failed to connect to MongoDB", error);
     throw new Error("Database connection error");
   }
 };
@@ -43,7 +44,7 @@ export async function POST(request) {
 
     return NextResponse.json(savedQuery, { status: 201 });
   } catch (error) {
-    console.error("Failed to save the query", error);
+    logger.error("Failed to save the query", error);
     return NextResponse.json(
       { message: "Internal server error" },
       { status: 500 }

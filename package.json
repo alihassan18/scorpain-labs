@@ -58,6 +58,7 @@
         "tailwind-merge": "^2.3.0",
         "usehooks-ts": "^2.16.0",
         "uuid": "^9.0.1",
+        "winston": "^3.14.0",
         "yup": "^1.4.0",
         "zustand": "^4.5.2"
     },
