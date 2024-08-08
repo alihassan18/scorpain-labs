@@ -44,7 +44,7 @@ const StatusSection: React.FC = () => {
                   <h2
                     data-aos="fade-left"
                     data-aos-easing="linear"
-                    className="text-white sm:text-6xl text-[32px] sm:leading-[72px] leading-[40px] tracking-[-2.16px] font-slussen"
+                    className="text-white sm:text-6xl text-[32px] sm:leading-[72px] leading-[40px] tracking-[-2.16px] font-slussen uppercase"
                   >
                     {item.title}
                   </h2>

@@ -31,7 +31,7 @@ const ApplyMyTrade = () => {
     <div className="relative bg-black-dull" id="about">
       <Container className="md:py-28 py-10">
         <div className="text-center bg-black-mid rounded-lg py-16 flex flex-col items-center">
-          <h1 className="text-4xl textGradient font-semibold">
+          <h1 className="text-4xl textGradient font-semibold uppercase">
             Apply for Scorpian-labs MM Tool
           </h1>
           <p className="pt-3 text-base">
