@@ -1,4 +1,5 @@
 import { Container, Button } from "@/components/common";
+import Link from "next/link";
 import React from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 
@@ -62,9 +63,11 @@ const Prices: React.FC = () => {
                         );
                       })}
                     </ul>
-                    <Button className="bg-secondary mt-12 font-slussen whitespace-nowrap !text-2xl tracking-[0.34px] !text-black-100 flex items-center !py-2 !px-6 rounded-none gap-8 ">
-                      Try for Free <BsArrowUpRight className="text-sm" />
-                    </Button>
+                    <Link href="/#apply">
+                      <Button className="bg-secondary mt-12 font-slussen whitespace-nowrap !text-2xl tracking-[0.34px] !text-black-100 flex items-center !py-2 !px-6 rounded-none gap-8 ">
+                        Try for Free <BsArrowUpRight className="text-sm" />
+                      </Button>
+                    </Link>
                   </div>
                 );
               })}
