@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import QueryForm from "../../../models/querysModel";
 import { NextResponse } from "next/server";
 import winston from "winston";
-
+// test
 const logger = winston.createLogger({
   level: "error",
   format: winston.format.json(),
@@ -14,7 +14,7 @@ const connectDB = async () => {
     // connect server
     await mongoose.connect(
       process.env.MONGODB_URI ||
-        "mongodb+srv://alihassan:OixJwDgll81R1UM1@cluster0.wapv0.mongodb.net/scorpion_lab"
+      "mongodb+srv://alihassan:OixJwDgll81R1UM1@cluster0.wapv0.mongodb.net/scorpion_lab"
     );
   } catch (error) {
     logger.error("Failed to connect to MongoDB", error);
