@@ -3,6 +3,7 @@ import { Container, Button } from "@/components/common";
 import { BsArrowUpRight } from "react-icons/bs";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Link from "next/link";
 
 const OurMission: React.FC = () => {
   return (
@@ -29,13 +30,15 @@ const OurMission: React.FC = () => {
             software to gather market data and implement customized trading
             strategies.
           </p>
-          <Button
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            className="font-slussen mt-[65px] bg-secondary whitespace-nowrap !text-2xl tracking-[0.34px] !text-black-100 flex items-center !py-2 !px-6 rounded-none gap-8 "
-          >
-            Get Started <BsArrowUpRight className="text-sm" />
-          </Button>
+          <Link href="/#apply">
+            <Button
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              className="font-slussen mt-[65px] bg-secondary whitespace-nowrap !text-2xl tracking-[0.34px] !text-black-100 flex items-center !py-2 !px-6 rounded-none gap-8 "
+            >
+              Get Started <BsArrowUpRight className="text-sm" />
+            </Button>
+          </Link>
         </Container>
       </div>
     </section>

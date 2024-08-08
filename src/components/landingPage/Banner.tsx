@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Container, Button } from "@/components/common";
 import { BsArrowUpRight } from "react-icons/bs";
 import Image from "next/image";
+import Link from "next/link";
 
 const Banner: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ const Banner: React.FC = () => {
             size="xl"
             className="grid lg:grid-cols-2 grid-cols-1 items-center"
           >
-            <h1 className="sm:max-w-[602px] max-w-full text-white sm:text-8xl text-[28px] font-bold sm:leading-[92px] leading-[36.68px] font-slussen">
+            <h1 className="sm:max-w-[602px] max-w-full text-white sm:text-8xl text-[28px] font-bold sm:leading-[92px] !uppercase font-slussen">
               Crypto Market Maker SaaS Tool
             </h1>
             <div className="flex animate justify-end w-full">
@@ -43,9 +44,11 @@ const Banner: React.FC = () => {
             has the best anti-arbitrage protection to ensure your MM fund's
             safety.
           </p>
-          <Button className="bg-secondary sm:w-auto w-full font-slussen whitespace-nowrap !text-2xl tracking-[0.34px] !text-black-100 flex items-center !py-2 !px-6 rounded-none gap-8 ">
-            Get Started <BsArrowUpRight className="text-sm" />
-          </Button>
+          <Link href="/#apply">
+            <Button className="bg-secondary sm:w-auto w-full font-slussen whitespace-nowrap !text-2xl tracking-[0.34px] !text-black-100 flex items-center !py-2 !px-6 rounded-none gap-8 ">
+              Get Started <BsArrowUpRight className="text-sm" />
+            </Button>
+          </Link>
         </Container>
       </div>
     </Fragment>

@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import { Button, Container } from "@/components/common";
 import Image from "next/image";
 import { BsArrowUpRight } from "react-icons/bs";
+import Link from "next/link";
 
 const data = [
   {
@@ -70,9 +71,11 @@ const Services: React.FC = () => {
                       </p>
                     </div>
                     <div className="relative top-[100%] group-hover:top-0 duration-300">
-                      <Button className="bg-secondary !w-full mt-8 font-slussen whitespace-nowrap !text-2xl tracking-[0.34px] !text-black-100 flex items-center !py-2 !px-6 rounded-none gap-8 ">
-                        Get in Touch <BsArrowUpRight className="text-sm" />
-                      </Button>
+                      <Link href="/#apply">
+                        <Button className="bg-secondary !w-full mt-8 font-slussen whitespace-nowrap !text-2xl tracking-[0.34px] !text-black-100 flex items-center !py-2 !px-6 rounded-none gap-8 ">
+                          Get in Touch <BsArrowUpRight className="text-sm" />
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </div>

@@ -13,3 +13,10 @@ export interface Poi {
   };
   [key: string]: any;
 }
+
+export interface ApplyFormInputs {
+  projectName: string;
+  website: string;
+  companyName: string;
+  telegram: string;
+}

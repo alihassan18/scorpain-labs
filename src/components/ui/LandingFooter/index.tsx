@@ -32,9 +32,11 @@ const LandingFooter = () => {
 
         <div className="flex sm:items-center justify-between sm:flex-row flex-col gap-9 sm:mt-[124px] mt-[50px] h-max">
           <div className="flex gap-5 w-full items-center sm:flex-row flex-col">
-            <Button className="bg-secondary sm:w-max w-full font-slussen whitespace-nowrap !text-2xl tracking-[0.34px] !text-black-100 flex items-center !py-2 !px-6 rounded-none gap-8 ">
-              Get Started <BsArrowUpRight className="text-sm" />
-            </Button>
+            <Link href="/#apply">
+              <Button className="bg-secondary sm:w-max w-full font-slussen whitespace-nowrap !text-2xl tracking-[0.34px] !text-black-100 flex items-center !py-2 !px-6 rounded-none gap-8 ">
+                Get Started <BsArrowUpRight className="text-sm" />
+              </Button>
+            </Link>
             <p className="text-white text-xs font-slussen font-normal">
               © 2024 - Scorpian Labs
             </p>
